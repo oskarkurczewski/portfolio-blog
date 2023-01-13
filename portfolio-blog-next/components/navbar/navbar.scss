@@ -1,0 +1,60 @@
+@use "../../styles/variables.scss" as variables;
+
+.navbar {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   a {
+      text-decoration: none;
+      color: variables.$text-black;
+
+      h1 {
+         font-size: 3.5rem;
+         font-weight: 200;
+         margin-top: 1rem;
+         margin-bottom: 10px;
+      }
+   }
+
+   
+   
+
+   .line {
+      width: 650px;
+      height: 1px;
+      background-color: variables.$text-black;
+   }
+
+   .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+      gap: 15px;
+      margin-top: 10px;
+
+      a:hover {
+         text-decoration: underline;
+         text-decoration-color: variables.$text-black;
+         text-decoration-thickness: 1px;
+         text-underline-offset: 4px;
+      }
+
+      .dot {
+         height: 8px;
+         width: 8px;
+         border-radius: 50%;
+         background: variables.$text-black;
+      }
+
+      h3 {
+         margin-top: 0px;
+         margin-bottom: 0px;
+         font-size: 1.5rem;
+         font-weight: 200;
+      }
+   }
+
+   
+}
