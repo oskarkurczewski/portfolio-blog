@@ -16,6 +16,13 @@
       gap: 10px;
       margin-right: 50px;
 
+      .obrazek {
+         position: relative;
+         height: 610px;
+         width: 400px;
+
+      }
+
       .square-images {
          display: flex;
          flex-direction: column;

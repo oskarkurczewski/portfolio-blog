@@ -48,11 +48,17 @@
          background: variables.$text-black;
       }
 
+      .purple-highlight {
+         color: variables.$accent-purple;
+      }
+
       h3 {
          margin-top: 0px;
          margin-bottom: 0px;
          font-size: 1.5rem;
          font-weight: 200;
+
+         
       }
    }
 

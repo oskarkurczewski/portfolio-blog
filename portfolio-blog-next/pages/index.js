@@ -1,19 +1,28 @@
 import React from 'react'
 import Link from "next/link";
+import Head from "next/head";
 import Image from 'next/image'
 import alexandra from '../public/alexandra.png'
 import kook from '../public/kook.jpg'
 import kasiasienki from '../public/kasiasienki.jpg'
 
-export default function Home() {
+function Home({data}) {
+  const url = "http://localhost:1337"
+
   return (
     <div className='mainpage-container'>
+      <Head>
+        <title>Oskar Kurczewski</title>
+      </Head>
+
       <div className='photos-container'>
         <div className='square-images'>
-          <Image src={alexandra} width={300} height={300} alt="alexandra savior"/>
-          <Image src={kasiasienki} width={300} height={300} alt="alexandra savior"/>
+          <Image src={url + data.data.attributes.squarephotos.data[0].attributes.url} width={300} height={300} alt={data.data.attributes.squarephotos.data[0].attributes.alternativeText}/>
+          <Image src={url + data.data.attributes.squarephotos.data[1].attributes.url} width={300} height={300} alt={data.data.attributes.squarephotos.data[1].attributes.alternativeText}/>
         </div>
-        <Image src={kook} height={610} alt="alexandra savior"/>
+        <div className='obrazek'>
+         <Image src={url + data.data.attributes.verticalphoto.data.attributes.url} fill alt={data.data.attributes.verticalphoto.data.attributes.alternativeText}/>
+        </div>
       </div>
       <div className='menu-container'>
         <Link href="/portfolio">
@@ -54,3 +63,12 @@ export default function Home() {
     </div>
   )
 }
+
+export async function getServerSideProps() {
+  const res = await fetch(`http://127.0.0.1:1337/api/mainpage?populate=*`)
+  const data = await res.json()
+
+  return { props: { data } }
+}
+
+export default Home

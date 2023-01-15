@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "mainpages",
+  "info": {
+    "singularName": "mainpage",
+    "pluralName": "mainpages",
+    "displayName": "mainpage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "squarephotos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "verticalphoto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
