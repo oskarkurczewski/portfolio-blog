@@ -10,9 +10,11 @@ export default function App({ Component, pageProps }) {
       <Head>    
         <title>Oskar Kurczewski</title>
       </Head>
-      <Navbar/>
-        <Component {...pageProps}/>
-      <Footer/>
+      <div className="app-container">
+        <Navbar/>
+          <Component {...pageProps}/>
+        <Footer/>
+      </div>
     </>
     );
 }

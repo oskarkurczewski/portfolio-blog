@@ -2,9 +2,6 @@ import React from 'react'
 import Link from "next/link";
 import Head from "next/head";
 import Image from 'next/image'
-import alexandra from '../public/alexandra.png'
-import kook from '../public/kook.jpg'
-import kasiasienki from '../public/kasiasienki.jpg'
 
 function Home({data}) {
   const url = "http://localhost:1337"

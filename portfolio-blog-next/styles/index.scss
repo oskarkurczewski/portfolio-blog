@@ -7,6 +7,49 @@
 @import "../components/footer/footer.scss";
 @import "../components/navbar/navbar.scss";
 
+
+.not-found-container {
+   display: flex;
+   flex-direction: column;
+   margin-top: 120px;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+
+   a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: variables.$text-black;
+
+      .button {
+         background-color: variables.$text-black;
+         color: variables.$background-white;
+         margin-top: 50px;
+
+         h2 {
+            font-weight: 300;
+            font-size: 1.5rem;
+            padding-left: 40px;
+            padding-right: 40px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+         }
+      }
+
+      .button:hover {
+         background-color: variables.$background-white;
+         color: variables.$text-black;
+         border: 1px solid variables.$text-black;
+         text-decoration: underline;
+         text-decoration-color: variables.$text-black;
+         text-decoration-thickness: 2px;
+         text-underline-offset: 4px;
+      }
+   }
+}
+
 .mainpage-container {
    display: flex;
    margin-top: 50px;
@@ -50,12 +93,6 @@
             margin-bottom: 4px;
          }
 
-         // h3:hover {
-         //    text-decoration: underline;
-         //    text-decoration-color: variables.$text-black;
-         //    text-decoration-thickness: 2px;
-         //    text-underline-offset: 8px;
-         // }
       }
 
       a:hover {
@@ -72,3 +109,47 @@
       }
    }
 }
+
+.about-container {
+   margin-top: 50px;
+   width: 1100px;
+   display: flex;
+   flex-direction: column;
+
+   .description {
+      display: flex;
+
+      .text {
+         margin-left: 40px;
+         text-align: justify;
+         text-justify: inter-word;
+         margin-bottom: 20px;
+
+         h2 {
+            text-align: justify;
+            font-weight: 300;
+            font-size: 1.5rem;
+            margin-top: 0px;
+            margin-bottom: 20px;
+         }
+
+         p {
+            font-size: 1rem;
+            font-weight: 200;
+            margin-top: 0px;
+         }
+
+      }
+
+      
+   }
+
+
+   .photos {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+   }
+}
+
