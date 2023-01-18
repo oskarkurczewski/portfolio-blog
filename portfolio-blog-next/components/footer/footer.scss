@@ -1,6 +1,9 @@
+@use "../../styles/variables.scss" as variables;
+
+
 .footer-container {
    width: 100%;
-   position: absolute;
+   position: fixed;
    display: flex;
    flex-direction: column;
    justify-items: center;
@@ -11,9 +14,11 @@
    margin-left: auto;
    margin-right: auto;
    backdrop-filter: blur(10px);
+   background-color: #e2e2e399;
+   
 
    .line {
-      width: 900px;
+      width: 1000px;
       height: 1px;
       background-color: variables.$text-black;
    }

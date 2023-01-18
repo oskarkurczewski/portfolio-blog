@@ -15,7 +15,7 @@
     "title": {
       "type": "string",
       "required": true,
-      "maxLength": 64
+      "maxLength": 56
     },
     "content": {
       "type": "dynamiczone",
@@ -23,6 +23,34 @@
         "common.photo",
         "common.paragraph"
       ],
+      "required": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "recenzja",
+        "relacja",
+        "felieton"
+      ]
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "string",
       "required": true
     }
   }
