@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 
 export default function PostPage() {
+
   return (
    <>
     <div className='post-header-container'>
@@ -32,7 +33,7 @@ export default function PostPage() {
             <div className='submitter'>
                <label for="nickname">Imię:</label>
                <input type="text" id="nickname" name="nickname"/>
-               <button type="submit">WYŚLIJ</button>
+               <button type="button">WYŚLIJ</button>
             </div>
          </form>
          <div className='comments'>

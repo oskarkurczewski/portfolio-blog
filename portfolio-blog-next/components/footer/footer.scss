@@ -17,6 +17,19 @@
    background-color: #e2e2e399;
    
 
+   a:not(:hover) {
+      img {
+         opacity: 100;
+         transition: opacity 0.4s;
+      }
+   }
+
+   a:hover {
+      img {
+         opacity: 90%;
+      }
+   }
+
    .line {
       width: 1000px;
       height: 1px;

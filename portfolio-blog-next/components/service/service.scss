@@ -1,0 +1,49 @@
+@use "../../styles/variables.scss" as variables;
+
+.service {
+   width: 400px;
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   align-items: center;
+   align-content: center;
+
+   h2 {
+      font-weight: 300;
+   }
+
+   .information {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      box-sizing: border-box;
+      border: 1px solid transparent;
+      transition: border 0.5s;
+      padding: 20px;     
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+         text-align: justify;
+      }
+
+      .prices {
+         text-align: center;
+      }
+
+      img {
+         object-fit: cover;
+         transition: opacity 0.5s;
+         // display: none;
+      }
+
+      img:hover {
+         opacity: 0%;
+      }
+   }
+
+   .information:hover {
+      border: 1px solid variables.$text-black;
+   }
+}

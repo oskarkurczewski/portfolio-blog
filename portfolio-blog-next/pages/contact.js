@@ -1,7 +1,38 @@
 import React from 'react'
 import Head from "next/head";
+import { useState } from 'react';
 
 export default function Contact() {
+  const [firstname, setFirstame] = useState('')
+  const [surname, setSurname] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+  async function addContactEntry(e) {
+    e.preventDefault()
+
+    const contactEntryData = {
+      name: firstname,
+      surname: surname,
+      email: email,
+      message: message,
+    }
+
+    const add = await fetch("http://localhost:1337/api/contact-entries", {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({data: contactEntryData})
+    })
+
+    setFirstame('')
+    setSurname('')
+    setEmail('')
+    setMessage('')
+  }
+
   return (
     <>
       <Head>
@@ -10,26 +41,26 @@ export default function Contact() {
       <div className='contact-container'>
         <h2>Skontaktuj się za pomocą formularza:</h2>
         <div className='form-container'>
-          <form action="/" method="post">
+          <form onSubmit={(e) => addContactEntry(e)}>
             <div className='name-input'>
               <div className='row-input'>
                 <label for="name">Imię:</label>
-                <input type="text" id="name" name="name"></input>
+                <input required type="text" onChange={e => setFirstame(e.target.value)} value={firstname} id="name" name="name"></input>
               </div>
               <div className='row-input'>
                 <label for="surname">Nazwisko:</label>
-                <input type="text" id="surname" name="surname"></input>
+                <input required type="text" onChange={e => setSurname(e.target.value)} value={surname} id="surname" name="surname"></input>
               </div>
             </div>
             <div className='column-input'>
               <label for="email">Email:</label>
-              <input type="text" id="email" name="email"></input>
+              <input required type="email" onChange={e => setEmail(e.target.value)} value={email} id="email" name="email"></input>
             </div>
             <div className='column-input'>
               <label for="message">Wiadomość:</label>
-              <textarea type="text" id="message" name="message"></textarea>
+              <textarea required type="text" onChange={e => setMessage(e.target.value)} value={message} id="message" name="message"></textarea>
             </div>
-            <button type="submit">WYŚLIJ</button>
+            <button>WYŚLIJ</button>
           </form>
         </div>
         <h2>...lub skorzystaj z innych sposobów:</h2>

@@ -17,9 +17,6 @@
       }
    }
 
-   
-   
-
    .line {
       width: 650px;
       height: 1px;
@@ -33,6 +30,15 @@
       justify-items: center;
       gap: 15px;
       margin-top: 10px;
+      
+
+      a {
+         text-decoration: underline;
+         text-decoration-color: transparent;
+         text-decoration-thickness: 1px;
+         text-underline-offset: 4px;
+         transition: text-decoration 0.4s;
+      }
 
       a:hover {
          text-decoration: underline;

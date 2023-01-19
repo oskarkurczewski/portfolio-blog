@@ -4,27 +4,28 @@
   "info": {
     "singularName": "contact-entry",
     "pluralName": "contact-entries",
-    "displayName": "contact-entry"
+    "displayName": "contact-entry",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "Surname": {
+    "surname": {
       "type": "string",
       "required": true
     },
-    "Email": {
+    "email": {
       "type": "string",
       "required": true,
       "regex": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
     },
-    "Message": {
+    "message": {
       "type": "text",
       "required": true,
       "unique": true
