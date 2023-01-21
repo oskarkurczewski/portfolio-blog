@@ -1,22 +1,30 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
+import Link from "next/link";
 
-export default function Card({category}) {
+export default function Card({data}) {
+  const url = "http://localhost:1337";
+  function formatDate(date, locale = 'pl-PL') {
+    return new Date(date).toLocaleDateString(locale);
+  }
+  
   return (
-    <div className='card-container'>
-      <div className='thumbnail-container'>
-         <Image src="/kasiasienki.jpg" fill></Image>    
-         <div className="category" id={category}>
-            <p className='category-name'>{category}</p>
-         </div>  
+    <Link href={`/blog/${data.attributes.slug}`}>
+      <div className='card-container'>
+          <div className='thumbnail-container'>
+            <Image src={url + data.attributes.thumbnail.data.attributes.url} fill></Image>    
+            <div className="category">
+                <p className='category-name'>{data.attributes.category}</p>
+            </div>  
+          </div>
+          <div className='info-container'>
+            <p className='title'>{data.attributes.title}</p>
+            <div className='bottom-info'>
+              <div className='line'></div>
+              <p className='date'>{formatDate(data.attributes.publishedAt)}</p>
+            </div>
+          </div>
       </div>
-      <div className='info-container'>
-         <p className='title'>Candy Claws - Ceres & Calypso in the Deep Time Deep Time</p>
-         <div className='bottom-info'>
-          <div className='line'></div>
-          <p className='date'>09.01.2023</p>
-         </div>
-      </div>
-    </div>
+    </Link>
   )
 }

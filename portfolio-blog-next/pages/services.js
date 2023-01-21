@@ -4,8 +4,6 @@ import Service from '../components/service/Service.js';
 
 export default function Services({data}) {
 
-  console.log(data.data)
-
   return (
     <div className='services-container'>
       <Head>

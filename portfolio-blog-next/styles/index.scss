@@ -8,6 +8,8 @@
 @import "../components/navbar/navbar.scss";
 @import "../components/card/card.scss";
 @import "../components/service/service.scss";
+@import "../components/imagemodal/imagemodal.scss";
+@import "../components/project-thumbnail/projectthumbnail.scss";
 
 .app-container {
    display: flex;
@@ -25,7 +27,6 @@
    flex-direction: column;
    margin-top: 120px;
    align-items: center;
-   justify-content: center;
    align-content: center;
    width: 1100px;
 
@@ -39,7 +40,10 @@
       .button {
          background-color: variables.$text-black;
          color: variables.$background-white;
+         border: 1px solid variables.$text-black;
          margin-top: 50px;
+         transition: background-color 0.5s;
+         transition: color 0.5s;
 
          h2 {
             font-weight: 300;
@@ -55,10 +59,6 @@
          background-color: variables.$background-white;
          color: variables.$text-black;
          border: 1px solid variables.$text-black;
-         text-decoration: underline;
-         text-decoration-color: variables.$text-black;
-         text-decoration-thickness: 2px;
-         text-underline-offset: 4px;
       }
    }
 }
@@ -99,7 +99,6 @@
          justify-content: center;
    
          a {
-            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -153,6 +152,7 @@
    width: 1100px;
    display: flex;
    flex-direction: column;
+   padding-bottom: 130px;
 
    .description {
       display: flex;
@@ -497,10 +497,71 @@
 .services-container{
    display: flex;
    justify-content: center;
+   align-items: center;
    flex-grow: 1;
-   margin-top: 50px;
    gap: 40px;
    width: 1100px;
    padding-bottom: 100px;
+
+}
+
+.portfolio-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   flex-grow: 1;
+   gap: 40px;
+   width: 1100px;
+   padding-bottom: 200px;
+   margin-top: 50px;
+}
+
+.project-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   flex-grow: 1;
+   gap: 40px;
+   padding-bottom: 100px;
+   margin-top: 50px;
+
+   .project-header {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+
+      h2 {
+         font-size: 2rem;
+         font-weight: 200;
+         margin: 0;
+      }
+
+      h3 {
+         font-size: 1.5rem;
+         font-weight: 200;
+         margin: 0;
+      }
+   }
+
+   .portfolio-masonry-container {
+      display: flex;
+      flex-grow: 1;
+
+      .portfolio-masonry {
+      column-count: 2;
+      column-gap: 20px;
+      width: min-content;
+      height: auto;
+      
+      img {
+         width: 500px;
+         margin-bottom: 14px;
+         cursor: zoom-in;
+      }
+
+      }
+
+   }
 
 }

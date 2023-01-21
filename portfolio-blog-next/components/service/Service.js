@@ -3,7 +3,6 @@ import React from 'react'
 
 export default function Service({data}) {
    const url = "http://localhost:1337";
-   console.log(data);
 
   return (
    <div className='service'>

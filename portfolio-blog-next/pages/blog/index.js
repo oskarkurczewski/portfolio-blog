@@ -2,7 +2,8 @@ import Head from 'next/head'
 import React from 'react'
 import Card from '../../components/card/Card'
 
-export default function Blog() {
+export default function Blog({data}) {
+
   return (
     <>
       <Head>
@@ -10,22 +11,18 @@ export default function Blog() {
       </Head>
       <div className='blog-container'>
         <div className='cards-container'>
-          <Card category="Recenzja"></Card>
-          <Card category="Relacja"></Card>
-          <Card category="Relacja"></Card>
-          <Card category="Recenzja"></Card>
-          <Card category="Felieton"></Card>
-          <Card category="Recenzja"></Card>
-          <Card category="Recenzja"></Card>
-          <Card category="Relacja"></Card>
-          <Card category="Recenzja"></Card>
-          <Card category="Recenzja"></Card>
-          <Card category="Relacja"></Card>
-          <Card category="Recenzja"></Card>
-          <Card category="Recenzja"></Card>
-          <Card category="Relacja"></Card>
+          {data.data.map(post => (
+            <Card data={post}/>
+          ))}
         </div>
       </div>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(`http://127.0.0.1:1337/api/posts?populate=thumbnail`)
+  const data = await res.json()
+
+  return { props: { data } }
 }

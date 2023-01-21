@@ -1,10 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import { useEffect, useState } from 'react';
-import muchy from "../public/muchy-graja.jpg";
-import kasiaspiewa from "../public/kasia-spiewa.jpg";
-import wdowikowski from "../public/wdowikowski.jpg";
-import alexandra from "../public/alexandra.png";
 import Image from 'next/image';
 
 export default function About({data}) {
@@ -33,7 +28,7 @@ export default function About({data}) {
         </div>
         <div className='photos'>
           {images.map(image => (
-            <Image src={url + image.attributes.url} width='250' height='250' alt={image.attributes.name}></Image>
+            <Image src={url + image.attributes.url} width='320' height='320' alt={image.attributes.name}></Image>
           ))}
         </div>
       </div>

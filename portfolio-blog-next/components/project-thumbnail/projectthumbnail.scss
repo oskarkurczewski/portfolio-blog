@@ -1,0 +1,47 @@
+@use "../../styles/variables.scss" as variables;
+
+
+.project-thumbnail {
+   width: 900px;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   .project-info-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+         color: variables.$text-black;
+         font-size: 1.5rem;
+         font-weight: 300;
+         margin: 0px;   
+      }
+
+      .left {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+      }
+
+      .right {
+         a { 
+            text-decoration: none;
+         }
+
+         p {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            transition: text-decoration 0.5s;
+         }
+
+         p:hover {
+            text-decoration-color: variables.$text-black;
+         }
+
+      }
+   }
+}

@@ -1,0 +1,47 @@
+@use "../../styles/variables.scss" as variables;
+
+.modal-container {
+   position: fixed;
+   z-index: 1000;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   justify-items: center;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(148, 148, 148, 0.34);
+   backdrop-filter: blur(4px);
+   top: 0;
+   cursor: zoom-out;
+
+   .picture-container {     
+      display: flex;
+      flex-direction: column;
+      margin-top: -50px;
+      align-items: center;
+
+      p {
+         margin-bottom: 10px;
+         font-size: 1.5rem;
+         box-sizing: border-box;
+         align-self: flex-end;
+         color: variables.$text-black;
+         text-decoration: underline;
+         text-decoration-color: transparent;
+         cursor: pointer;
+         transition: text-decoration 0.5s;
+      }
+
+      p:hover {
+         text-decoration-color: variables.$text-black;
+      }
+
+      img {
+         max-height: 75vh;
+         max-width: 75vw;
+         height: auto;
+      }
+   }
+
+}

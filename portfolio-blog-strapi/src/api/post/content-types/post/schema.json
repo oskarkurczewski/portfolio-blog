@@ -20,8 +20,8 @@
     "content": {
       "type": "dynamiczone",
       "components": [
-        "common.photo",
-        "common.paragraph"
+        "post.paragraph",
+        "post.picture"
       ],
       "required": true
     },
@@ -36,9 +36,9 @@
     "category": {
       "type": "enumeration",
       "enum": [
-        "recenzja",
-        "relacja",
-        "felieton"
+        "Recenzja",
+        "Relacja",
+        "Felieton"
       ]
     },
     "background": {
@@ -51,6 +51,16 @@
     },
     "description": {
       "type": "string",
+      "required": true
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
       "required": true
     }
   }

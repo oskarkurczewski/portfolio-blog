@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_common_paragraphs",
+  "collectionName": "components_post_paragraphs",
   "info": {
     "displayName": "paragraph"
   },
@@ -7,7 +7,8 @@
   "attributes": {
     "content": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "minLength": 1
     }
   }
 }

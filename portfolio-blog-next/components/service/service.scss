@@ -25,7 +25,7 @@
       justify-content: space-between;
 
       p {
-         text-align: justify;
+         font-size: 24px;
       }
 
       .prices {
@@ -35,7 +35,6 @@
       img {
          object-fit: cover;
          transition: opacity 0.5s;
-         // display: none;
       }
 
       img:hover {
