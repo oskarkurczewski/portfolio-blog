@@ -53,15 +53,16 @@
       "type": "string",
       "required": true
     },
-    "comments": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::comment.comment"
-    },
     "slug": {
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "post"
     }
   }
 }

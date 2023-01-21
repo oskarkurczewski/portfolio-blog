@@ -1,11 +1,18 @@
 import Image from 'next/image'
 import React from 'react'
+import Comment from '../../components/comment/Comment';
 
 export default function PostPage({data}) {
    const url = "http://localhost:1337";
    function formatDate(date, locale = 'pl-PL') {
       return new Date(date).toLocaleDateString(locale);
     }
+
+    console.log(data.data.attributes.comments.data.length)
+
+   //  data.data.attributes.comments.data.map(comment => (
+   //    console.log(comment.attributes)
+   //  ))
 
   return (
    <>
@@ -47,7 +54,15 @@ export default function PostPage({data}) {
             </div>
          </form>
          <div className='comments'>
-            brak komentarzy
+            {
+               data.data.attributes.comments.data.length === 0 
+               ?
+               <p>brak komentarzy</p>
+               :
+               data.data.attributes.comments.data.map(comment => (
+                  <Comment comment={comment}/>
+               ))
+            }
          </div>
       </div>
     </div>

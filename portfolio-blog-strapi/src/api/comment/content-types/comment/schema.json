@@ -25,17 +25,11 @@
       "maxLength": 56,
       "minLength": 3
     },
-    "comment": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::comment.comment",
-      "inversedBy": "post"
-    },
     "post": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::comment.comment",
-      "mappedBy": "comment"
+      "relation": "manyToOne",
+      "target": "api::post.post",
+      "inversedBy": "comments"
     }
   }
 }
