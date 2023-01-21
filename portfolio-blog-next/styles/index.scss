@@ -10,6 +10,7 @@
 @import "../components/service/service.scss";
 @import "../components/imagemodal/imagemodal.scss";
 @import "../components/project-thumbnail/projectthumbnail.scss";
+@import "../components/comment/comment.scss";
 
 .app-container {
    display: flex;
@@ -296,6 +297,7 @@
 
       .comments {
          min-height: 400px;
+         min-width: 100%;
       }
 
       h3 {

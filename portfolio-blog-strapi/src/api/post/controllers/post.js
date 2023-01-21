@@ -20,6 +20,7 @@ module.exports = createCoreController("api::post.post", ({ strapi }) => ({
         },
         thumbnail: true,
         background: true,
+        comments: true,
       },
     });
 

@@ -1,0 +1,38 @@
+@use "../../styles/variables.scss" as variables;
+
+.comment-container {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: min-content;
+   font-weight: 300;
+
+   .comment-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: variables.$text-black;
+      margin-bottom: -12px;
+   
+      .comment-author {
+         font-weight: 600;
+      }
+
+      .dot {
+         height: 4px;
+         width: 4px;
+         border-radius: 50%;
+         background: variables.$text-black;
+      }
+
+      .comment-date {
+         font-style: italic;
+      }
+   }
+
+   .comment-content {
+      p {
+         margin: 0;
+      }
+   }
+}
