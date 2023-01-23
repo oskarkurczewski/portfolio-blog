@@ -1,4 +1,5 @@
 import React from 'react'
+import TimeAgo from 'javascript-time-ago';
 import pl from 'javascript-time-ago/locale/pl.json';
 import ReactTimeAgo from 'react-time-ago';
 
