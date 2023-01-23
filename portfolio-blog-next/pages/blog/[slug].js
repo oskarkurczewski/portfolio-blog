@@ -1,19 +1,46 @@
 import Image from 'next/image'
 import React from 'react'
 import Comment from '../../components/comment/Comment';
+import { useState } from 'react';
+import Router from 'next/router'
 
 export default function PostPage({data}) {
    const url = "http://localhost:1337";
    function formatDate(date, locale = 'pl-PL') {
       return new Date(date).toLocaleDateString(locale);
     }
+    const router = Router.useRouter()
+    
+    const [nickname, setNickname] = useState('')
+    const [content, setContent] = useState('')
+    const postId = data.data.id
 
-    console.log(data.data.attributes.comments.data.length)
+    async function addComment(e) {
+      e.preventDefault();
 
-   //  data.data.attributes.comments.data.map(comment => (
-   //    console.log(comment.attributes)
-   //  ))
+      const commentData = {
+         nickname: nickname,
+         content: content,
+         post: {
+            id: postId
+         }
+      }
 
+      const add = await fetch("http://localhost:1337/api/comments", {
+         method: "POST",
+         headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({data: commentData})
+      })
+
+      setNickname('')
+      setContent('')
+      router.reload(window.location.pathname)
+   }
+
+    
   return (
    <>
     <div className='post-header-container'>
@@ -45,12 +72,12 @@ export default function PostPage({data}) {
       <div className='line'></div>
       <div className='comments-container'>
          <h3>Komentarze</h3>
-         <form action="/add-comment" method="post">
-            <textarea type="text" id="comment"/>
+         <form onSubmit={(e) => addComment(e)}>
+            <textarea required type="text" id="comment" onChange={e => setContent(e.target.value)}/>
             <div className='submitter'>
                <label for="nickname">Imię:</label>
-               <input type="text" id="nickname" name="nickname"/>
-               <button type="button">WYŚLIJ</button>
+               <input required type="text" onChange={e => setNickname(e.target.value)} id="nickname" name="nickname"/>
+               <button>WYŚLIJ</button>
             </div>
          </form>
          <div className='comments'>
