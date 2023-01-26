@@ -28,11 +28,16 @@
          font-size: 24px;
       }
 
+      p, div {
+         display: none;
+      }
+
       .prices {
          text-align: center;
       }
 
       img {
+
          object-fit: cover;
          transition: opacity 0.5s;
       }
@@ -44,5 +49,9 @@
 
    .information:hover {
       border: 1px solid variables.$text-black;
+      
+      p, div {
+         display: block;
+      }
    }
 }

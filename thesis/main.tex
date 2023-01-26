@@ -1,0 +1,318 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % includegraphics and all images tools
+\usepackage{float}
+\usepackage[intlimits]{amsmath}
+\usepackage{amssymb,amsfonts}
+% \usepackage{txfonts} arial 
+\usepackage{fancyhdr} % Extensive control of page headers and footers
+\usepackage{fancyvrb}
+\usepackage{subcaption}
+\usepackage{chngcntr}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{listings}
+\usepackage[hyphens]{url}
+\usepackage{placeins}
+\usepackage{hyperref} % links and urls in document
+\usepackage{indentfirst} % wcięcie pierwszego akapitu
+\usepackage{pdfpages} % include pdf in document - title page
+\usepackage[figuresleft]{rotating}
+\usepackage{afterpage}
+\usepackage[bottom]{footmisc}
+
+% podpisy nad tabelami
+\floatstyle{plaintop}
+\restylefloat{table}
+% end
+
+% fbox dookola bialych zdjec
+\fboxsep=0mm%padding thickness
+\fboxrule=0.5pt%border thickness
+%end
+
+\usepackage{makecell}
+
+\usepackage{pifont}
+\usepackage{xcolor}
+\newcommand{\cmark}{\textcolor{green!80!black}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{4cm}}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+% listingi i spis listingów
+\usepackage{listings}
+\usepackage{caption}
+
+\DeclareCaptionType{code}[Listing][Spis listingów]
+\lstset{language=Python,
+    frame=single, % adds a frame around the code
+    xleftmargin=3.4pt,
+    xrightmargin=3.4pt,
+    keywordstyle=\color{blue},
+    basicstyle=\scriptsize\ttfamily,
+    commentstyle=\color{Green}\ttfamily,
+    rulecolor=\color{black},
+    upquote=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ftff,
+    frame=single,
+    belowcaptionskip=1em,
+    belowskip=1em,}
+
+%linki
+\hypersetup{
+  colorlinks = true, %Colours links instead of ugly boxes
+  urlcolor = black, %Colour for external hyperlinks
+  linkcolor = black, %Colour of internal links
+  citecolor = black %Colour of citations
+}
+
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\restylefloat{table}
+\let\svaddcontentsline\addcontentsline
+\captionsetup{justification=centering} 
+\addto\captionspolish{\renewcommand{\figurename}{Rys.}}
+\addto\captionspolish{\renewcommand{\tablename}{Tab.}}
+\addto\captionspolish{\renewcommand{\contentsname}{Spis treści}}
+\addto\captionspolish{\renewcommand{\abstractname}{}}
+\addto\captionspolish{\renewcommand{\listfigurename}{Spis rysunków}}
+\addto\captionspolish{\renewcommand{\listtablename}{Spis tabel}}
+\renewcommand{\baselinestretch}{1.5}
+\numberwithin{figure}{section}
+\counterwithin{table}{section}
+\counterwithin{code}{section}
+
+\begin{document}
+\begin{sloppypar}
+
+% Strona tytułowa:
+
+\includepdf{title_page.pdf}
+\pagenumbering{arabic}
+\setcounter{page}{2}
+\setcounter{secnumdepth}{3}
+
+% Spis treści:
+
+\tableofcontents
+\pagebreak
+
+% Wstęp
+
+\section{Wstęp}
+
+Fotografia to stosunkowo nowy wynalazek --- nie minęło nawet 200 lat od wykonania pierwszego znanego nam zdjęcia, słynnego ``Widoku z okna w Le Gras'' z 1826 roku. Początki uwieczniania obrazu przez ludzi były jednak diametralnie różne od tego, co znane jest dzisiaj. Do momentu wynalezienia matrycy światłoczułej (czyli powstania fotografii cyfrowej), rozwój technik fotograficznych polegał jedynie na ulepszaniu technologii bazującej na światłoczułości soli srebra \cite{fotografia}. Fotografia wkrótce została rozpowszechniona na całym świecie. Dało jej to ogromne znaczenie historyczne i kulturowe --- zdjęcia mogą być zarówno dziełami sztuki, jak i dokumentacją ważnych wydarzeń. Powstał również zawód fotografa, który przeszedł wiele zmian na przestrzeni czasu --- początkowo były to osoby, do których należało się udać, żeby mieć możliwość uwiecznienia swojego wizerunku. Zmiana charakterystyki wspomnianej profesji zaczęła następować wraz z wynalezieniem fotografii cyfrowej oraz rozwojem technologii informatycznych. W 1957 roku powstał pierwszy obraz cyfrowy, wykonany przez Russella Kirscha, amerykańskiego naukowca-informatyka. Był to skan analogowej fotografii jego 3-miesięcznego syna \cite{firstdigitalphoto}. Dwanaście lat później Willard S. Boyle oraz George E. Smith wynaleźli matrycę CCD\footnote{ang. CCD --- charge-coupled device}. Z perspektywy czasu okazało się to być na tyle istotnym dokonaniem, że jego autorzy otrzymali w 2009 roku nagrodę Nobla \cite{nobelfoto}. Powstanie i rozpowszechnienie fotografii cyfrowej zbiegło się też z okresem najszybszego wzrostu ogólnej dostępności Internetu. Na przełomie tysiącleci pojawiły się media społecznościowe, w tym niektóre niemal całkowicie oparte na publikowaniu obrazów, na przykład Instagram (\url{www.instagram.com}). Ludzie codziennie dzielą się milionami zdjęć, a największe konta posiadają nawet kilkaset milionów obserwujących \cite{instagram}. Inne media społecznościowe również w dużej mierze polegają na możliwości udostępniania zdjęć. Wszystko to powoduje, że zawód fotografa jest obecnie zupełnie inny, niż w czasach przed wynalezieniem aparatu cyfrowego. Pojawiają się nowe rodzaje zleceń --- profesjonalnie wykonane zdjęcia potrzebne są nie tylko po to, aby uwiecznić ważne momenty w życiu człowieka lub umieścić je w prasie, ale również stanowią niezwykle ważny środek przekazu w reklamie. 
+
+Powszechna dostępność aparatów cyfrowych oraz rozwój technologii pozwalający na polepszenie stosunku ceny do jakości sprzętu fotograficznego spowodowały jednak, że pojawiło się wielu fotografów, a co za tym idzie --- utworzyła się większa konkurencja na rynku. Trudniej jest znaleźć nowych klientów. Aby pozyskać zlecenia, w obecnych czasach konieczna jest więc odpowiednia promocja świadczonych usług. Według zeszłorocznego badania przeprowadzonego przez kanadyjski magazyn Format wśród 3.898 fotografów z 97 krajów, na najważniejsze źródła pozyskiwania nowych klientów składają się polecenia od poprzednich klientów (61\% respondentów), strona internetowa z portfolio (40\%), Instagram (38\%), Facebook (25\%) oraz wyszukiwania w Google (22\%) \cite{stateofphotography}. Z danych tych wynika, że najbardziej istotnym internetowym narzędziem do pozyskiwania nowych klientów są personalne strony internetowe, na których można obejrzeć portfolio fotografa.
+
+To, jak ma wyglądać portfolio osoby świadczącej usługi fotograficzne, w dużym stopniu zależy od tego, jaką dziedzinę fotografii reprezentuje jego właściciel. Przykładowo, fotograf ślubny oprócz samego portfolio powinien posiadać na swojej stronie internetowej dokładniejszy opis świadczonych usług, a także przydatne informacje mogące pomóc potencjalnemu klientowi podjąć decyzję o kontakcie. Osobie prowadzącej studio fotograficzne przyda się wykaz rekwizytów, a fotografowi produktowemu lista firm, z którymi współpracował. Strona tworzona w ramach tej pracy inżynierskiej będzie natomiast przeznaczona dla fotografa koncertowego i dziennikarza muzycznego. Przydatnym elementem będzie więc blog, który posłuży do umieszczania relacji z wydarzeń takich, jak koncerty czy festiwale, a także zapewni miejsce do publikowania wypowiedzi w charakterze felietonu lub recenzji.
+
+
+%% Cel i założenia pracy
+
+\subsection{Cel i założenia pracy}
+
+Celem pracy jest zaprojektowanie oraz implementacja personalnej strony internetowej łączącej cechy strony-wizytówki, blogu z systemem komentowania oraz portfolio fotograficznego. Strona ta ma być miejscem prezentacji osiągnięć fotografa i dziennikarza muzycznego. Etap projektu skupia się na przeglądzie istniejących rozwiązań oraz na wykonaniu projektu graficznego strony. Implementacja polega na stworzeniu dwuczęściowej aplikacji sieciowej przy użyciu systemu zarządzania treścią Strapi oraz szkieletu aplikacyjnego Next.js, umożliwiającego pobieranie danych ze Strapi oraz renderowanie treści po stronie serwera, co pozwala na korzystne pozycjonowanie strony w wyszukiwarkach internetowych. 
+
+%% Układ pracy
+
+\subsection{Układ pracy}
+
+Rozdział pierwszy wprowadza do tematyki oraz problematyki pracy. Drugi rozdział jest przeglądem istniejących rozwiązań --- personalnych stron-wizytówek popularnych zagranicznych fotografów koncertowych, portali społecznościowych używanych w branży, a także blogów i innych stron o tematyce muzycznej. W rozdziale trzecim przedstawione są narzędzia, które zostały wykorzystane podczas projektowania oraz implementacji tworzonej strony internetowej. Rozdział czwarty poświęcony jest projektowi portfolio i blogu --- znalazły się w nim założenia projektu, wymagania funkcjonalne i niefunkcjonalne oraz opis realizacji projektu. Piąty rozdział jest prezentacją wykonanej strony internetowej, a szósty podsumowuje realizację projektu, celu oraz założeń pracy.
+
+% Przegląd istniejących rozwiązań 
+
+\newpage
+
+\section{Przegląd istniejących rozwiązań}
+
+Fotografia i dziennikarstwo to branże, które wzajemnie od siebie zależą. Zdjęcia urozmaicają relacje prasowe z wydarzeń, powodują, że artykuły są ciekawsze, a odbiór fotoreportażu jest lepszy wtedy, gdy przedstawiona jest jakaś historia. Aby strona internetowa realizowana na potrzeby tej pracy inżynierskiej była wykonana z zachowaniem najlepszych możliwych praktyk, został przeprowadzony przegląd istniejących rozwiązań posiadających podobne funkcje. Pozwoli to na znalezienie inspiracji, wyciągnięcie wniosków i wykorzystanie ich zarówno podczas projektowania wyglądu strony, jak i na etapie implementacji.
+
+%% Personalne strony-wizytówki fotografów
+
+\subsection{Personalne strony-wizytówki fotografów}
+
+
+
+%%% Neil Krug
+
+\subsubsection{Neil Krug}
+
+%%% Ashley Osborn
+
+\subsubsection{Ashley Osborn}
+
+%% Portale społecznościowe
+
+\subsection{Portale społecznościowe}
+
+%%% Instagram
+
+\subsubsection{Instagram}
+
+%%% Facebook
+
+\subsubsection{Facebook}
+
+%% Blogi i inne strony o tematyce muzycznej
+
+\subsection{Blogi i inne strony o tematyce muzycznej}
+
+%%% Pitchfork
+
+\subsubsection{Pitchfork}
+
+%%% Porcys
+
+\subsubsection{Porcys}
+
+% Narzędzia wybrane do realizacji projektu
+
+\newpage 
+
+\section{Narzędzia wybrane do realizacji projektu}
+
+%% Projekt
+
+\subsection{Projekt graficzny}
+
+%%% Figma
+
+\subsubsection{Figma}
+
+%%% Adobe Illustrator
+
+\subsubsection{Adobe Illustrator}
+
+%% Implementacja
+
+\subsection{Implementacja}
+
+%%% JavaScript
+
+\subsubsection{JavaScript}
+
+%%% NPM
+
+\subsubsection{NPM}
+
+%%% Strapi
+
+\subsubsection{Strapi}
+
+%%% Next.js
+
+\subsubsection{Next.js}
+
+%% SCSS
+
+\subsubsection{Sass (SCSS)}
+
+% Projekt portfolio i blogu
+
+\newpage 
+
+\section{Projekt portfolio i blogu}
+
+%% Założenia projektu
+
+\subsection{Założenia projektu}
+
+%% Wymagania funkcjonalne
+
+\subsection{Wymagania funkcjonalne}
+
+%% Wymagania niefunkcjonalne
+
+\subsection{Wymagania niefunkcjonalne}
+
+
+%% Realizacja projektu 
+
+\subsection{Realizacja projektu}
+
+% Portfolio i blog
+
+\newpage
+
+\section{Portfolio i blog}
+
+%% System zarządzania treścią
+
+\subsection{System zarządzania treścią}
+
+%% Strona internetowa
+
+\subsection{Strona internetowa}
+
+% Podsumowanie
+
+\section{Podsumowanie}
+
+% Spis rysunków
+
+\addcontentsline{toc}{section}{\protect\numberline{}Spis rysunków}%
+    \listoffigures
+    \clearpage
+
+% Spis tabel
+
+\addcontentsline{toc}{section}{\protect\numberline{}Spis tabel}%
+    \listoftables
+    \clearpage
+
+% Spis listingów
+
+\addcontentsline{toc}{section}{\protect\numberline{}Spis listingów}%
+    \listofcodes
+    \clearpage
+
+% Bibliografia
+
+\section*{Bibliografia}
+    \addcontentsline{toc}{section}{\protect\numberline{}Bibliografia}%
+    \renewcommand{\section}[2]{}
+    
+\begin{thebibliography}{99}
+
+    \bibitem{fotografia}
+    Leszek J. Pękalski,
+    \textit{Kalejdoskop fotografii. Między techniką a sztuką},
+    Helion,
+    2012.
+
+    \bibitem{nobelfoto} 
+    The Nobel Prize in Physics 2009,
+    \url{https://www.nobelprize.org/prizes/physics/2009/summary/}, 
+    dostęp 25.01.2023.
+
+    \bibitem{firstdigitalphoto}
+    The first digital photos, National Science and Media Museum,
+    \url{https://www.scienceandmediamuseum.org.uk/objects-and-stories/first-digital-photos},
+    dostęp 25.01.2023.
+
+    \bibitem{instagram}
+    Most followers on Instagram, Statista,
+    \url{https://www.statista.com/statistics/421169/most-followers-instagram/},
+    dostęp 25.01.2023.
+
+    \bibitem{stateofphotography}
+    State of the Photography Industry Report 2022, Format,
+    \url{https://www.format.com/magazine/features/photography/state-of-the-photography-industry-2022},
+    dostęp 25.01.2023.
+        
+\end{thebibliography}
+
+\end{sloppypar}
+\end{document}

@@ -31,7 +31,7 @@
    }
 
    .line {
-      width: 1000px;
+      width: 1100px;
       height: 1px;
       background-color: variables.$text-black;
    }
@@ -40,11 +40,11 @@
       display: flex;
       align-items: center;
       justify-content: space-around;
-      width: 900px;
+      width: 1100px;
       height: 100px;
       font-weight: 200;
       font-size: 10pt;
-      
+
       .contact {
          display: flex;
          flex-direction: column;
