@@ -7,9 +7,11 @@ export default function Contact() {
   const [surname, setSurname] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [response, setResponse] = useState(0)
 
   async function addContactEntry(e) {
     e.preventDefault()
+    setResponse(0)
 
     const contactEntryData = {
       name: firstname,
@@ -31,6 +33,7 @@ export default function Contact() {
     setSurname('')
     setEmail('')
     setMessage('')
+    setResponse(add.status)
   }
 
   return (
@@ -60,7 +63,23 @@ export default function Contact() {
               <label for="message">Wiadomość:</label>
               <textarea required type="text" onChange={e => setMessage(e.target.value)} value={message} id="message" name="message"></textarea>
             </div>
-            <button>WYŚLIJ</button>
+            <div className='contact-row'>
+              <div className='response-container'>
+              {
+                    response === 200 
+                    ?
+                    <p className='success'>Pomyślnie wysłano wiadomość!</p>
+                    : (
+                      response === 0 
+                      ?
+                      <></>
+                      :
+                      <p className='failure'>Coś poszło nie tak. Spróbuj ponownie później!</p>
+                    )
+                  }
+              </div>
+              <button>WYŚLIJ</button>
+            </div>
           </form>
         </div>
         <h2>...lub skorzystaj z innych sposobów:</h2>
