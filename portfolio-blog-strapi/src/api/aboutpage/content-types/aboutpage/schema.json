@@ -4,7 +4,8 @@
   "info": {
     "singularName": "aboutpage",
     "pluralName": "aboutpages",
-    "displayName": "aboutpage"
+    "displayName": "aboutpage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,20 +23,12 @@
       "type": "text"
     },
     "portrait": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
-    },
-    "bottomimages": {
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     }
   }
 }

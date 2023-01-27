@@ -44,7 +44,7 @@ export default function PostPage({data}) {
   return (
    <>
     <div className='post-header-container'>
-      <Image className='header-image' src="/mag.jpg" fill></Image> 
+      <Image className='header-image' src={url + data.data.attributes.background.data.attributes.url} fill></Image> 
       <div className='post-header'>
          <h2>{data.data.attributes.title}</h2>
          <h3>{data.data.attributes.description}</h3>

@@ -6,6 +6,7 @@ export default function Contact() {
   const [firstname, setFirstame] = useState('')
   const [surname, setSurname] = useState('')
   const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
   const [response, setResponse] = useState(0)
 
@@ -17,6 +18,7 @@ export default function Contact() {
       name: firstname,
       surname: surname,
       email: email,
+      subject: subject,
       message: message,
     }
 
@@ -32,6 +34,7 @@ export default function Contact() {
     setFirstame('')
     setSurname('')
     setEmail('')
+    setSubject('')
     setMessage('')
     setResponse(add.status)
   }
@@ -58,6 +61,10 @@ export default function Contact() {
             <div className='column-input'>
               <label for="email">Email:</label>
               <input required type="email" onChange={e => setEmail(e.target.value)} value={email} id="email" name="email"></input>
+            </div>
+            <div className='column-input'>
+              <label for="subject">Temat:</label>
+              <input required type="text" onChange={e => setSubject(e.target.value)} value={subject} id="subject" name="subject"></input>
             </div>
             <div className='column-input'>
               <label for="message">Wiadomość:</label>

@@ -4,8 +4,6 @@ import Image from 'next/image';
 
 export default function About({data}) {
   const url = "http://localhost:1337"
- 
-  const images = data.data.attributes.bottomimages.data
 
   return (
     <>
@@ -13,23 +11,19 @@ export default function About({data}) {
           <title>Oskar Kurczewski - o mnie</title>
       </Head>
       <div className='about-container'>
-        <div className='description'>
-          <Image src={url + data.data.attributes.portrait.data.attributes.url} width='320' height='320' alt={data.data.attributes.portrait.data.attributes.name}></Image>
-          <div className='text'>
-          <h2>{data.data.attributes.headline}</h2>  
-          <p>
-            {data.data.attributes.paragraph1}
-          <br/>
-          <br/>
-            {data.data.attributes.paragraph2}
-          </p>
-          </div>
-          
+        <div className='image-container'>
+          <Image src={url + data.data.attributes.portrait.data.attributes.url} fill alt={data.data.attributes.portrait.data.attributes.name}/>
         </div>
-        <div className='photos'>
-          {images.map(image => (
-            <Image src={url + image.attributes.url} width='320' height='320' alt={image.attributes.name}></Image>
-          ))}
+        <div>
+          <div className='text'>
+          <h1>{data.data.attributes.headline}</h1>    
+            <p>
+              {data.data.attributes.paragraph1}
+            </p>
+            <p>
+              {data.data.attributes.paragraph2}
+            </p>
+          </div>
         </div>
       </div>
     </>
