@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from 'next/image'
 
 function Home({data}) {
-  const url = "http://localhost:1337"
+  const url = "http://localhost:1337";
 
   return (
     <div className='mainpage-container'>
@@ -14,11 +14,11 @@ function Home({data}) {
       <div className='mainpage-content'>
         <div className='photos-container'>
           <div className='square-images'>
-            <Image src={url + data.data.attributes.squarephotos.data[0].attributes.url} width={300} height={300} alt={data.data.attributes.squarephotos.data[0].attributes.alternativeText}/>
-            <Image src={url + data.data.attributes.squarephotos.data[1].attributes.url} width={300} height={300} alt={data.data.attributes.squarephotos.data[1].attributes.alternativeText}/>
+            <Image src={url +  data.data.attributes.squarephotos.data[0].attributes.url} width={300} height={300} alt={data.data.attributes.squarephotos.data[0].attributes.alternativeText}/>
+            <Image src={url +  data.data.attributes.squarephotos.data[1].attributes.url} width={300} height={300} alt={data.data.attributes.squarephotos.data[1].attributes.alternativeText}/>
           </div>
           <div className='obrazek'>
-          <Image src={url + data.data.attributes.verticalphoto.data.attributes.url} fill alt={data.data.attributes.verticalphoto.data.attributes.alternativeText}/>
+          <Image src={url +  data.data.attributes.verticalphoto.data.attributes.url} fill alt={data.data.attributes.verticalphoto.data.attributes.alternativeText}/>
           </div>
         </div>
         <div className='menu-container'>
@@ -64,7 +64,7 @@ function Home({data}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://127.0.0.1:1337/api/mainpage?populate=*`)
+  const res = await fetch(`${process.env.API_URL}/api/mainpage?populate=*`)
   const data = await res.json()
 
   return { props: { data } }

@@ -17,7 +17,7 @@ export default function Portfolio({data}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://127.0.0.1:1337/api/projects?populate=*`)
+  const res = await fetch(`${process.env.API_URL}/api/projects?populate=*`)
   const data = await res.json()
 
   return { props: { data } }

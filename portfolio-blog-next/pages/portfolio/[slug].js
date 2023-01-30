@@ -26,7 +26,7 @@ export default function Project({data}) {
                <img onClick={(e) => {
                setIsOpen(true);
                setModalUrl(e.target.src)
-            }} src={url + photo.attributes.url} />
+            }} src={url +  photo.attributes.url} />
             ))}
          </div>
       </div>
@@ -35,7 +35,7 @@ export default function Project({data}) {
 }
 
 export async function getServerSideProps({params}) {
-   const res = await fetch(`http://127.0.0.1:1337/api/projects/${params.slug}`)
+   const res = await fetch(`${process.env.API_URL}/api/projects/${params.slug}`)
   
    if (res.status === 404) {
       return {

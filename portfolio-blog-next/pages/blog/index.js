@@ -1,8 +1,17 @@
 import Head from 'next/head'
 import React from 'react'
 import Card from '../../components/card/Card'
+import { useState } from 'react';
+import Router from "next/router";
 
-export default function Blog({data}) {
+export default function Blog({data, page}) {
+
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const pageSize = data.meta.pagination.pageSize;
+
+  // const onPageChange = (page) => {
+  //   setCurrentPage(page);
+  // }
 
   return (
     <>
@@ -16,13 +25,27 @@ export default function Blog({data}) {
           ))}
         </div>
       </div>
+      <div className='pagination-container'>
+        <p>Strona: {page} z {data.meta.pagination.pageCount}</p>
+        <div className='pagination-buttons'>
+          <button onClick={() => Router.push(`/blog?page=${page - 1}`)} disabled={page <= 1}>Poprzednia</button>
+          <button onClick={() => Router.push(`/blog?page=${page + 1}`)} disabled={page >= data.meta.pagination.pageCount}>Następna</button>
+        </div>
+      </div>
+      
+        
     </>
   )
 }
 
-export async function getServerSideProps() {
-  const res = await fetch(`http://127.0.0.1:1337/api/posts?populate=thumbnail`)
+export async function getServerSideProps({query: {page = 1}}) {
+  const res = await fetch(`${process.env.API_URL}/api/posts?populate=thumbnail&sort=publishedAt:desc&pagination[page]=${page}&pagination[pageSize]=3`)
   const data = await res.json()
 
-  return { props: { data } }
+  return { 
+    props: { 
+      data: data,
+      page: +page
+    }
+  }
 }

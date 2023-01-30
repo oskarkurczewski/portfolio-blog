@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image';
 
 export default function About({data}) {
-  const url = "http://localhost:1337"
+  const url = "http://localhost:1337";
 
   return (
     <>
@@ -31,7 +31,7 @@ export default function About({data}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://127.0.0.1:1337/api/aboutpage?populate=*`)
+  const res = await fetch(`${process.env.API_URL}/api/aboutpage?populate=*`)
   const data = await res.json()
 
   return { props: { data } }

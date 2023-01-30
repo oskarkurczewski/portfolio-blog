@@ -17,7 +17,7 @@ export default function Services({data}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://127.0.0.1:1337/api/services?populate=*`)
+  const res = await fetch(`${process.env.API_URL}/api/services?populate=*`)
   const data = await res.json()
 
   return { props: { data } }

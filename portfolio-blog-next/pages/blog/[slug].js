@@ -9,8 +9,8 @@ export default function PostPage({data}) {
    function formatDate(date, locale = 'pl-PL') {
       return new Date(date).toLocaleDateString(locale);
     }
-    const router = Router.useRouter()
-    
+    const router = Router.useRouter();
+
     const [nickname, setNickname] = useState('')
     const [content, setContent] = useState('')
     const postId = data.data.id
@@ -26,7 +26,7 @@ export default function PostPage({data}) {
          }
       }
 
-      const add = await fetch("http://localhost:1337/api/comments", {
+      const add = await fetch(`${url} + /api/comments`, {
          method: "POST",
          headers: {
             'Accept': 'application/json',
@@ -98,7 +98,7 @@ export default function PostPage({data}) {
 }
 
 export async function getServerSideProps({params}) {
-   const res = await fetch(`http://127.0.0.1:1337/api/posts/${params.slug}`)
+   const res = await fetch(`${process.env.API_URL}/api/posts/${params.slug}`)
   
    if (res.status === 404) {
       return {
