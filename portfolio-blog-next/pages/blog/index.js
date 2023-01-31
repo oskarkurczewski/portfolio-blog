@@ -39,7 +39,7 @@ export default function Blog({data, page}) {
 }
 
 export async function getServerSideProps({query: {page = 1}}) {
-  const res = await fetch(`${process.env.API_URL}/api/posts?populate=thumbnail&sort=publishedAt:desc&pagination[page]=${page}&pagination[pageSize]=3`)
+  const res = await fetch(`${process.env.API_URL}/api/posts?populate=thumbnail,comments&sort=publishedAt:desc&pagination[page]=${page}&pagination[pageSize]=6`)
   const data = await res.json()
 
   return { 

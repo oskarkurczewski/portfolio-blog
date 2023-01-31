@@ -319,20 +319,11 @@ Biorąc pod uwagę cechy analizowanych stron-wizytówek oraz portali społeczno�
 
 \section{Narzędzia wybrane do realizacji projektu}
 
-Niniejszy rozdział przedstawia narzędzia, które zostały wykorzystane podczas wykonywania projektu graficznego tworzonej strony oraz jego realizacji. Ich wybór podyktowany był wcześniejszym doświadczeniem, dostępnością dokumentacji oraz dostosowaniem do wymagań projektowych, które zostały przedstawione w rozdziale \ref{wymagania}.
+Niniejszy rozdział przedstawia narzędzia, które zostały wykorzystane do wykonania projektu graficznego tworzonej strony oraz jego realizacji. Ich wybór podyktowany był wcześniejszym doświadczeniem, dostępnością dokumentacji oraz dostosowaniem do wymagań projektowych, które zostały przedstawione w rozdziale \ref{wymagania}.
 
-%% Projekt
+%% Figma
 
-\subsection{Projekt graficzny}
-
-Do wykonania projektu graficznego zostały wykorzystane dwa narzędzia --- program do projektowania i prototypowania graficznych interfejsów użytkownika Figma oraz edytor grafiki wektorowej Adobe Illustrator (ozdobne graficzne elementy strony). 
-
-%%% Figma
-
-\subsubsection{Figma}
-
-
-
+\subsection{Figma}
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.99\textwidth]{images/figma-1.jpg}}
@@ -340,34 +331,39 @@ Do wykonania projektu graficznego zostały wykorzystane dwa narzędzia --- progr
    \label{fig:figma-1.jpg}
 \end{figure}
 
-%%% Adobe Illustrator
+Wcześniejsze wykonanie projektu graficznego tworzonej strony internetowej pozwala na jej łatwiejszą implementację. Taki interfejs użytkownika jest też bardziej spójny wizualnie, co jest ważne dla pozytywnego odbioru strony. Do sporządzenia projektu strony-portfolio z blogiem wykorzystane zostało narzędzie Figma (rys. \ref{fig:figma-1.jpg}) --- prosty w obsłudze program pozwalający na wykonanie interaktywnych projektów interfejsów użytkownika za pomocą grafiki wektorowej \cite{figma}. 
 
-\subsubsection{Adobe Illustrator}
+%% JavaScript
 
+\subsection{JavaScript}
 
-%% Implementacja
+Do implementacji tworzonego projektu wykorzystany został JavaScript (JS), czyli najpopularniejszy język programowania na świecie \cite{js}. Cechują go: wieloplatformowość, wysokopoziomowość i dynamiczne typowanie. Jako zaletę języka JavaScript można wymienić wsparcie dla wielu platform --- tworzone za jego pomocą aplikacje mogą być używane zarówno na urządzeniach mobilnych, jak i w przeglądarce. Ponadto duży wybór bibliotek oraz szkieletów aplikacyjnych ułatwia dobranie odpowiednich narzędzi do danego typu projektu.
 
-\subsection{Implementacja}
+%% Node/NPM
 
-%%% JavaScript
+\subsection{Node.js oraz \textit{npm}}
 
-\subsubsection{JavaScript}
+Node.js to wieloplatformowe środowsko uruchomieniowe zbudowane w języku JavaScript \cite{node}. Jego działanie jest oparte na zdarzeniach asynchronicznych, dzięki czemu aplikacja stworzona w Node.js działa jako jeden proces. Integralnym elementem środowiska Node.js jest npm (Node Package Manager) --- system zarządzania pakietami pozwalający na łatwą instalację wybranych bibliotek i narzędzi \cite{npm}. 
 
-%%% NPM
+%% Strapi
 
-\subsubsection{NPM}
+\subsection{Strapi}
 
-%%% Strapi
+Strapi to system zarządzania treścią (CMS) typu \textit{headless} --- oznacza to, że nie posiada on warstwy widoku, co daje dużą dowolność w zakresie doboru technologii odpowiedzialnej za wyświetlanie dodanych treści. Głównymi cechami Strapi są:
+\begin{itemize}
+    \item wsparcie dla wielu systemów zarządzania bazami danych --- SQLite (domyślny), MySQL, PostresQL oraz MariaDB \cite{strapifeatures};
+    \item 
+\end{itemize}
 
-\subsubsection{Strapi}
+%% Next.js
 
-%%% Next.js
-
-\subsubsection{Next.js}
+\subsection{Next.js}
 
 %% SCSS
 
-\subsubsection{Sass (SCSS)}
+\subsection{Sass (SCSS)}
+
+Sass to preprocesor CSS 
 
 % Projekt portfolio i blogu
 
@@ -506,6 +502,18 @@ Do wykonania projektu graficznego zostały wykorzystane dwa narzędzia --- progr
     Helion,
     2016.
 
+    \bibitem{figma}
+    Fabio Staiano,
+    \textit{Designing and Prototyping Interfaces with Figma},
+    Packt Publishing,
+    2022.
+
+    \bibitem{js}
+    David Flanagan,
+    \textit{JavaScript. Przewodnik. Poznaj język mistrzów programowania. Wydanie VII},
+    Helion,
+    2021.
+
     \bibitem{historiafacebooka}
     Facebook Overview, History \& Facts, Britannica,
     \textit{https://www.britannica.com/topic/Facebook},
@@ -524,6 +532,21 @@ Do wykonania projektu graficznego zostały wykorzystane dwa narzędzia --- progr
     \bibitem{strapidocs}
     Strapi Developer Docs,
     \textit{https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html},
+    dostęp 27.01.2023.
+
+    \bibitem{strapifeatures}
+    Strapi Features,
+    \textit{https://strapi.io/features},
+    dostęp 27.01.2023.
+
+    \bibitem{node}
+    About Node.js,
+    \textit{https://nodejs.org/en/about/},
+    dostęp 27.01.2023.
+
+    \bibitem{npm}
+    About npm,
+    \textit{https://www.npmjs.com/about},
     dostęp 27.01.2023.
         
 \end{thebibliography}

@@ -7,6 +7,8 @@ export default function Card({data}) {
   function formatDate(date, locale = 'pl-PL') {
     return new Date(date).toLocaleDateString(locale);
   }
+
+  console.log(data.attributes.comments.data.length)
   
   return (
     <Link href={`/blog/${data.attributes.slug}`}>
@@ -21,7 +23,9 @@ export default function Card({data}) {
             <p className='title'>{data.attributes.title}</p>
             <div className='bottom-info'>
               <div className='line'></div>
-              <p className='date'>{formatDate(data.attributes.publishedAt)}</p>
+              <p className='date'>
+                {formatDate(data.attributes.publishedAt)} 
+              </p>
             </div>
           </div>
       </div>

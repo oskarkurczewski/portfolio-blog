@@ -15,7 +15,7 @@ a {
    display: flex;
    flex-direction: column;
    width: 275px;
-   height: 425px;
+   height: 400px;
    background-color: variables.$white;
    transition: background-color 1s;
    transition: box-shadow 0.5s;
@@ -83,6 +83,11 @@ a {
       
             .date {
                font-style: italic;
+
+               img {
+                  margin-right: 6px;
+                  margin-top: -2px;
+               }
             }
          }
    

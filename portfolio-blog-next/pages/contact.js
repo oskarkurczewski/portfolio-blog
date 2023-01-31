@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useState } from 'react';
 
 export default function Contact() {
+  const url = "http://localhost:1337";
   const [firstname, setFirstame] = useState('')
   const [surname, setSurname] = useState('')
   const [email, setEmail] = useState('')
@@ -22,7 +23,7 @@ export default function Contact() {
       message: message,
     }
 
-    const add = await fetch("http://localhost:1337/api/contact-entries", {
+    const add = await fetch(`${url}/api/contact-entries`, {
       method: "POST",
       headers: {
         'Accept': 'application/json',

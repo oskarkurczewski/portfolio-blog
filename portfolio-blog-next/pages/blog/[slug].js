@@ -26,7 +26,7 @@ export default function PostPage({data}) {
          }
       }
 
-      const add = await fetch(`${url} + /api/comments`, {
+      const add = await fetch(`${url}/api/comments`, {
          method: "POST",
          headers: {
             'Accept': 'application/json',
