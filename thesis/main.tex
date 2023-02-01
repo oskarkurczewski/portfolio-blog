@@ -75,8 +75,8 @@
     breaklines=true,
     frameround=ftff,
     frame=single,
-    belowcaptionskip=1em,
-    belowskip=1em,}
+    belowcaptionskip=0.2em,
+    belowskip=0.2em,}
 
 %linki
 \hypersetup{
@@ -153,7 +153,7 @@ Rozdział pierwszy wprowadza do tematyki oraz problematyki pracy. Drugi rozdzia�
 
 \newpage
 
-\section{Przegląd istniejących rozwiązań}
+\section{Przegląd istniejących rozwiązań} \label{przeglad}
 
 Fotografia i dziennikarstwo to branże, które wzajemnie od siebie zależą. Zdjęcia urozmaicają relacje prasowe z wydarzeń, powodują, że artykuły są ciekawsze, a odbiór fotoreportażu jest lepszy wtedy, gdy przedstawiona jest jakaś historia. Aby strona internetowa realizowana na potrzeby tej pracy inżynierskiej była wykonana z zachowaniem najlepszych możliwych praktyk, został przeprowadzony przegląd istniejących rozwiązań posiadających podobne funkcje. Pozwoli to na znalezienie inspiracji, wyciągnięcie wniosków i wykorzystanie ich zarówno podczas projektowania wyglądu strony, jak i na etapie implementacji.
 
@@ -349,21 +349,53 @@ Node.js to wieloplatformowe środowsko uruchomieniowe zbudowane w języku JavaSc
 
 \subsection{Strapi}
 
-Strapi to system zarządzania treścią (CMS) typu \textit{headless} --- oznacza to, że nie posiada on warstwy widoku, co daje dużą dowolność w zakresie doboru technologii odpowiedzialnej za wyświetlanie dodanych treści. Głównymi cechami Strapi są:
+Strapi to system zarządzania treścią (CMS) typu \textit{headless} --- oznacza to, że nie pozwala on na definiowanie układu i wyglądu strony, a jedynie za zarządzanie treścią i jej dostarczanie do warstwy widoku. Użytkownik za pomocą intuicyjnego interfejsu graficznego może stworzyć model danych dostosowany do aktualnych potrzeb i wymagań. Do dyspozycji są dostępne typy pojedyncze (występujące tylko raz na całej stronie, np. treść sekcji ``o mnie''), kolekcje (np. posty lub projekty w portfolio) oraz komponenty (elementy powtarzające się w kolekcjach i typach pojedynczych) \cite{strapifeatures}. Głównymi zaletami Strapi są:
 \begin{itemize}
-    \item wsparcie dla wielu systemów zarządzania bazami danych --- SQLite (domyślny), MySQL, PostresQL oraz MariaDB \cite{strapifeatures};
-    \item 
+    \item wsparcie dla wielu systemów zarządzania bazami danych --- SQLite (domyślny), MySQL, PostgresQL oraz MariaDB;
+    \item wiele dostępnych wtyczek ułatwiających korzystanie z systemu;
+    \item konfigurowalne API, pozwalające na dostosowanie systemu do potrzeb;
+    \item obsługa kont użytkownika i uprawnień poprzez role, dzięki czemu nie ma konieczności jej oddzielnego implementowania.
 \end{itemize}
+
+
+%% SQLite
+
+\subsection{SQLite}
+
+SQLite jest domyślnym systemem zarządzania bazą danych dla Strapi. W porównaniu do innych popularnych systemów takich jak MySQL czy PostgresQL, SQLite wyróżnia się tym, że jest biblioteką i nie wymaga oddzielnego procesu --- zapis i odczyt wykonywany jest po prostu za pomocą pliku bazy danych \cite{sqlite}. Dzięki temu jego ogromną zaletą są brak konieczności instalacji oraz konfiguracji bazy danych, a co za tym idzie --- łatwość użytkowania. 
+
+%% React
+
+\subsection{React}
+
+React to biblioteka będąca jednym z najpopularniejszych narzędzi do tworzenia interfejsów użytkownika stron internetowych \cite{react}. Całość kodu pisana jest w JavaScripcie. Ważnym elementem Reacta jest JSX (ang. \textit{JavaScript Syntax Extension}) --- rozszerzenie składni JavaScript podobne do języka znaczników HTML. Ułatwia ono intuicyjne tworzenie komponentów, z których składa się strona internetowa.
 
 %% Next.js
 
 \subsection{Next.js}
 
+Next.js jest szkieletem aplikacyjnym dla biblioteki React pozwalającym na tworzenie statycznych aplikacji internetowych \cite{next}. Jego kluczową cechą jest możliwość renderowania i generowania zawartości strony internetowej po stronie serwera, co ulepsza pozycjonowanie witryny w wyszukiwarkach (SEO --- ang. \textit{search engine optimization}). Dla ułatwienia pracy nad tworzonymi stronami internetowymi, Next.js korzysta z routingu opartego na stronach. Dodatkowo, wsparcie dla routingu dynamicznego zapewnia m. in. możliwość łatwego tworzenia czytelnych dla użytkownika linków w formie unikalnego ciągu znaków (ang. \textit{slug}). Next.js posiada także integrację z Sassem --- preprocesorem języka CSS.
+
 %% SCSS
 
 \subsection{Sass (SCSS)}
 
-Sass to preprocesor CSS 
+Sass (ang. \textit{Syntactically Awesome Style Sheets}) to preprocesor i rozszerzenie języka CSS (ang. \textit{Cascading Style Sheets}) posiadający dodatkowe funkcjonalności takie, jak zmienne lub możliwość zagnieżdżania stylów w sposób odwzorowujący hierarchię występującą w HTML. SCSS (ang. \textit{Sassy CSS}) jest natomiast składnią będącą nadzbiorem CSS, co oznacza, że poprawnie napisany CSS może być jednocześnie wykorzystany w pliku SCSS \cite{sass}. Różnice pomiędzy składniami SASS oraz SCSS zostały zaprezentowane w listingach \ref{chapter3:sass} i \ref{chapter3:scss}. Do realizacji projektu wybrana została składnia SCSS.\newline
+\begin{code}[htbp]
+    \lstinputlisting{./code/sass_example.txt}
+    \caption
+    [Przykład składni Sass.]
+    {Przykład składni Sass.}
+    \label{chapter3:sass}
+\end{code}
+
+\begin{code}[htbp]
+    \lstinputlisting{./code/scss_example.txt}
+    \caption
+    [Przykład składni SCSS.]
+    {Przykład składni SCSS.}
+    \label{chapter3:scss}
+\end{code}
 
 % Projekt portfolio i blogu
 
@@ -371,22 +403,33 @@ Sass to preprocesor CSS
 
 \section{Projekt portfolio i blogu} \label{wymagania}
 
+W tym rozdziale przedstawione zostaną założenia i wymagania (z podziałem na funkcjonalne i niefunkcjonalne) dotyczące projektu portfolio i blogu z systemem komentowania. W podrozdziale \ref{realizacja} zaprezentowane będą również najważniejsze aspekty implementacji tworzonej strony internetowej.
+ 
 %% Założenia projektu
 
-\subsection{Założenia projektu}
+\subsection{Założenia projektu (wymagania biznesowe)}
+
+Wymagania biznesowe określają wizję tworzonego projektu oraz cel jego realizacji \cite{wymagania}. Tworzona w ramach pracy inżynierskiej strona-wizytówka będzie składać się z dwóch części --- systemu zarządzania treścią Strapi oraz odpowiedzialnej za warstwę widoku aplikacji stworzonej z wykorzystaniem szkieletu aplikacyjnego Next.js. Jej głównym zadaniem jest przedstawienie prac fotografa w formie portfolio z podziałem na projekty (np. konkretne sesje zdjęciowe lub wydarzenia) oraz udostępnienie w formie bloga przestrzeni do wypowiedzi na temat powiązany z głównym obszarem tematycznym zdjęć, którym jest muzyka na żywo. Zgodnie z wnioskami z rozdziału \ref{przeglad}, graficzny interfejs tworzonej strony powinien być minimalistyczny, lecz nie surowy, co ma za zadanie skupić uwagę użytkownika na jej treści --- postach oraz fotografiach. 
 
 %% Wymagania funkcjonalne
 
 \subsection{Wymagania funkcjonalne}
 
+Wymagania funkcjonalne określają konkretne funkcje, które powinny znaleźć się w tworzonej aplikacji internetowej, aby założenia projektu zostały spełnione. Skupiają się na sposobie działania jego poszczególnych elementów, pełnią funkcję listy tego, co powinno zostać zaimplementowane \cite{wymagania}. 
+
+\subsubsection*{Test}
+
 %% Wymagania niefunkcjonalne
 
 \subsection{Wymagania niefunkcjonalne}
 
+W odróżnieniu od wymagań funkcjonalnych, wymagania niefunkcjonalne określają ogólne cechy tworzonej aplikacji. Dotyczą one między innymi jego jakości oraz dostępności. Skupiają się nie na tym, co robi produkt, lecz na tym, jak dobrze to robi \cite{wymagania}.
+
+\subsubsection*{}
 
 %% Realizacja projektu 
 
-\subsection{Realizacja projektu}
+\subsection{Realizacja projektu} \label{realizacja}
 
 % Portfolio i blog
 
@@ -548,6 +591,34 @@ Sass to preprocesor CSS
     About npm,
     \textit{https://www.npmjs.com/about},
     dostęp 27.01.2023.
+
+    \bibitem{sqlite}
+    About SQLite,
+    \textit{https://www.sqlite.org/about.html},
+    dostęp 27.01.2023.
+
+    \bibitem{react}
+    React - A JavaScript library for building user interfaces,
+    {https://reactjs.org},
+    dostęp 27.01.2023.
+
+    \bibitem{next}
+    Next.js by Vercel - the React framework,
+    {https://nextjs.org},
+    dostęp 27.01.2023. 
+
+    \bibitem{sass}
+    Sass basics,
+    {https://sass-lang.com/guide},
+    dostęp 27.01.2023.
+
+    \bibitem{wymagania}
+    Karl E Wiegers, Joy Beatty,
+    \textit{Specyfikacja oprogramowania. Inżynieria wymagań. Wydanie III},
+    Helion,
+    2014.
+    
+
         
 \end{thebibliography}
 

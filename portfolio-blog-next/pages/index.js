@@ -63,7 +63,7 @@ function Home({data}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${process.env.API_URL}/api/mainpage?populate=*`)
   const data = await res.json()
 

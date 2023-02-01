@@ -30,7 +30,7 @@ export default function About({data}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${process.env.API_URL}/api/aboutpage?populate=*`)
   const data = await res.json()
 

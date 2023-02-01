@@ -1,0 +1,7 @@
+div 
+   p 
+      font-size: 1rem
+      
+   img 
+      opacity: 90%
+   

@@ -16,7 +16,7 @@ export default function Services({data}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${process.env.API_URL}/api/services?populate=*`)
   const data = await res.json()
 

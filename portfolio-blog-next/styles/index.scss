@@ -85,14 +85,19 @@
             position: relative;
             height: 610px;
             width: 400px;
-   
+            overflow: hidden;
          }
-   
+
          .square-images {
+            position: relative;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            overflow: hidden;
          }
+
+         
+   
       }
    
       .menu-container {
