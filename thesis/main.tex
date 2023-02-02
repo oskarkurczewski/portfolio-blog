@@ -322,8 +322,15 @@ Biorąc pod uwagę cechy analizowanych stron-wizytówek oraz portali społeczno�
 Niniejszy rozdział przedstawia narzędzia, które zostały wykorzystane do wykonania projektu graficznego tworzonej strony oraz jego realizacji. Ich wybór podyktowany był wcześniejszym doświadczeniem, dostępnością dokumentacji oraz dostosowaniem do wymagań projektowych, które zostały przedstawione w rozdziale \ref{wymagania}.
 
 %% Figma
+\subsection*{Figma}
 
-\subsection{Figma}
+\begin{figure}[H] 
+    \centering
+        \includegraphics[width=0.1\textwidth]{images/figma-logo.png}
+   \caption{Logo narzędzia Figma.}
+\end{figure}
+
+
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.99\textwidth]{images/figma-1.jpg}}
@@ -335,19 +342,38 @@ Wcześniejsze wykonanie projektu graficznego tworzonej strony internetowej pozwa
 
 %% JavaScript
 
-\subsection{JavaScript}
+\subsection*{JavaScript}
 
-Do implementacji tworzonego projektu wykorzystany został JavaScript (JS), czyli najpopularniejszy język programowania na świecie \cite{js}. Cechują go: wieloplatformowość, wysokopoziomowość i dynamiczne typowanie. Jako zaletę języka JavaScript można wymienić wsparcie dla wielu platform --- tworzone za jego pomocą aplikacje mogą być używane zarówno na urządzeniach mobilnych, jak i w przeglądarce. Ponadto duży wybór bibliotek oraz szkieletów aplikacyjnych ułatwia dobranie odpowiednich narzędzi do danego typu projektu.
+\begin{figure}[H] 
+    \centering
+        \includegraphics[width=0.1\textwidth]{images/js-logo.png}
+   \caption{Logo języka JavaScript.}
+\end{figure}
+
+Do implementacji tworzonego projektu wykorzystany został \linebreak JavaScript (JS), czyli najpopularniejszy język programowania na świecie \cite{js}. Cechują go: wieloplatformowość, wysokopoziomowość i dynamiczne typowanie. Jako zaletę języka JavaScript można wymienić wsparcie dla wielu platform --- tworzone za jego pomocą aplikacje mogą być używane zarówno na urządzeniach mobilnych, jak i w przeglądarce. Ponadto duży wybór bibliotek oraz szkieletów aplikacyjnych ułatwia dobranie odpowiednich narzędzi do danego typu projektu.
 
 %% Node/NPM
 
-\subsection{Node.js oraz \textit{npm}}
+\subsection*{Node.js oraz npm}
 
-Node.js to wieloplatformowe środowsko uruchomieniowe zbudowane w języku JavaScript \cite{node}. Jego działanie jest oparte na zdarzeniach asynchronicznych, dzięki czemu aplikacja stworzona w Node.js działa jako jeden proces. Integralnym elementem środowiska Node.js jest npm (Node Package Manager) --- system zarządzania pakietami pozwalający na łatwą instalację wybranych bibliotek i narzędzi \cite{npm}. 
+\begin{figure}[H] 
+    \centering
+        \includegraphics[width=0.1\textwidth]{images/node-logo.png}\hspace{16pt}
+        \includegraphics[width=0.1\textwidth]{images/npm-logo.png}
+    \caption{Logotypy Node.js oraz npm.}
+\end{figure}
+
+Node.js to wieloplatformowe środowsko uruchomieniowe zbudowane w języku JavaScript \cite{node}. Jego działanie jest oparte na zdarzeniach asynchronicznych, dzięki czemu aplikacja stworzona w Node.js działa jako jeden proces. Integralnym elementem środowiska Node.js jest npm (\textit{Node Package Manager}) --- system zarządzania pakietami pozwalający na łatwą instalację wybranych bibliotek i narzędzi \cite{npm}. 
 
 %% Strapi
 
-\subsection{Strapi}
+\subsection*{Strapi}
+
+\begin{figure}[H] 
+    \centering
+        \includegraphics[width=0.2\textwidth]{images/strapi-logo.png}
+   \caption{Logo systemu zarządzania treścią Strapi.}
+\end{figure}
 
 Strapi to system zarządzania treścią (CMS) typu \textit{headless} --- oznacza to, że nie pozwala on na definiowanie układu i wyglądu strony, a jedynie za zarządzanie treścią i jej dostarczanie do warstwy widoku. Użytkownik za pomocą intuicyjnego interfejsu graficznego może stworzyć model danych dostosowany do aktualnych potrzeb i wymagań. Do dyspozycji są dostępne typy pojedyncze (występujące tylko raz na całej stronie, np. treść sekcji ``o mnie''), kolekcje (np. posty lub projekty w portfolio) oraz komponenty (elementy powtarzające się w kolekcjach i typach pojedynczych) \cite{strapifeatures}. Głównymi zaletami Strapi są:
 \begin{itemize}
@@ -360,27 +386,51 @@ Strapi to system zarządzania treścią (CMS) typu \textit{headless} --- oznacza
 
 %% SQLite
 
-\subsection{SQLite}
+\subsection*{SQLite}
 
-SQLite jest domyślnym systemem zarządzania bazą danych dla Strapi. W porównaniu do innych popularnych systemów takich jak MySQL czy PostgresQL, SQLite wyróżnia się tym, że jest biblioteką i nie wymaga oddzielnego procesu --- zapis i odczyt wykonywany jest po prostu za pomocą pliku bazy danych \cite{sqlite}. Dzięki temu jego ogromną zaletą są brak konieczności instalacji oraz konfiguracji bazy danych, a co za tym idzie --- łatwość użytkowania. 
+\begin{figure}[H] 
+    \centering
+        \includegraphics[width=0.1\textwidth]{images/sqlite-logo.png}
+   \caption{Logo systemu zarządzania bazami danych SQLite.}
+\end{figure}
+
+SQLite jest domyślnym systemem zarządzania relacyjną bazą danych dla Strapi. W porównaniu do innych popularnych systemów takich jak MySQL czy PostgresQL, SQLite wyróżnia się tym, że jest biblioteką języka C i nie wymaga oddzielnego procesu --- zapis i odczyt wykonywany jest po prostu za pomocą pliku bazy danych \cite{sqlite}. Dzięki temu jego ogromną zaletą są brak konieczności instalacji oraz konfiguracji bazy danych, a co za tym idzie --- łatwość użytkowania. SQLite wspiera język zapytań SQL (ang. \textit{Structured Query Language}).
 
 %% React
 
-\subsection{React}
+\subsection*{React}
+
+\begin{figure}[H] 
+    \centering
+        \includegraphics[width=0.1\textwidth]{images/react-logo.png}
+   \caption{Logo biblioteki React.}
+\end{figure}
 
 React to biblioteka będąca jednym z najpopularniejszych narzędzi do tworzenia interfejsów użytkownika stron internetowych \cite{react}. Całość kodu pisana jest w JavaScripcie. Ważnym elementem Reacta jest JSX (ang. \textit{JavaScript Syntax Extension}) --- rozszerzenie składni JavaScript podobne do języka znaczników HTML. Ułatwia ono intuicyjne tworzenie komponentów, z których składa się strona internetowa.
 
 %% Next.js
 
-\subsection{Next.js}
+\subsection*{Next.js}
+
+\begin{figure}[H] 
+    \centering
+        \includegraphics[width=0.1\textwidth]{images/next-logo.png}
+   \caption{Logo szkieletu aplikacyjnego Next.js.}
+\end{figure}
 
 Next.js jest szkieletem aplikacyjnym dla biblioteki React pozwalającym na tworzenie statycznych aplikacji internetowych \cite{next}. Jego kluczową cechą jest możliwość renderowania i generowania zawartości strony internetowej po stronie serwera, co ulepsza pozycjonowanie witryny w wyszukiwarkach (SEO --- ang. \textit{search engine optimization}). Dla ułatwienia pracy nad tworzonymi stronami internetowymi, Next.js korzysta z routingu opartego na stronach. Dodatkowo, wsparcie dla routingu dynamicznego zapewnia m. in. możliwość łatwego tworzenia czytelnych dla użytkownika linków w formie unikalnego ciągu znaków (ang. \textit{slug}). Next.js posiada także integrację z Sassem --- preprocesorem języka CSS.
 
 %% SCSS
 
-\subsection{Sass (SCSS)}
+\subsection*{Sass (SCSS)}
 
-Sass (ang. \textit{Syntactically Awesome Style Sheets}) to preprocesor i rozszerzenie języka CSS (ang. \textit{Cascading Style Sheets}) posiadający dodatkowe funkcjonalności takie, jak zmienne lub możliwość zagnieżdżania stylów w sposób odwzorowujący hierarchię występującą w HTML. SCSS (ang. \textit{Sassy CSS}) jest natomiast składnią będącą nadzbiorem CSS, co oznacza, że poprawnie napisany CSS może być jednocześnie wykorzystany w pliku SCSS \cite{sass}. Różnice pomiędzy składniami SASS oraz SCSS zostały zaprezentowane w listingach \ref{chapter3:sass} i \ref{chapter3:scss}. Do realizacji projektu wybrana została składnia SCSS.\newline
+\begin{figure}[H] 
+    \centering
+        \includegraphics[width=0.1\textwidth]{images/sass-logo.png}
+   \caption{Logo preprocesora Sass.}
+\end{figure}
+
+Sass (ang. \textit{Syntactically Awesome Style Sheets}) to preprocesor i rozszerzenie języka CSS (ang. \textit{Cascading Style Sheets}) posiadający dodatkowe funkcjonalności takie, jak zmienne lub możliwość zagnieżdżania stylów w sposób odwzorowujący hierarchię występującą w HTML. SCSS (ang. \textit{Sassy CSS}) jest natomiast składnią będącą nadzbiorem CSS, co oznacza, że poprawnie napisany CSS może być jednocześnie wykorzystany w pliku SCSS \cite{sass}. Różnice pomiędzy składniami SASS oraz SCSS zostały zaprezentowane w \linebreak listingach \ref{chapter3:sass} i \ref{chapter3:scss}. Do realizacji projektu wybrana została składnia SCSS.\newline
 \begin{code}[htbp]
     \lstinputlisting{./code/sass_example.txt}
     \caption
@@ -388,6 +438,8 @@ Sass (ang. \textit{Syntactically Awesome Style Sheets}) to preprocesor i rozszer
     {Przykład składni Sass.}
     \label{chapter3:sass}
 \end{code}
+
+\newpage 
 
 \begin{code}[htbp]
     \lstinputlisting{./code/scss_example.txt}
@@ -399,11 +451,10 @@ Sass (ang. \textit{Syntactically Awesome Style Sheets}) to preprocesor i rozszer
 
 % Projekt portfolio i blogu
 
-\newpage 
+\clearpage
 
 \section{Projekt portfolio i blogu} \label{wymagania}
-
-W tym rozdziale przedstawione zostaną założenia i wymagania (z podziałem na funkcjonalne i niefunkcjonalne) dotyczące projektu portfolio i blogu z systemem komentowania. W podrozdziale \ref{realizacja} zaprezentowane będą również najważniejsze aspekty implementacji tworzonej strony internetowej.
+W tym rozdziale przedstawione zostaną założenia i wymagania (z podziałem na funkcjonalne i niefunkcjonalne) dotyczące projektu portfolio i blogu z systemem komentowania. W podrozdziale \ref{realizacja} wraz z fragmentami kodu źródłowego zaprezentowane będą również najważniejsze aspekty implementacji tworzonej strony internetowej.
  
 %% Założenia projektu
 
@@ -417,7 +468,45 @@ Wymagania biznesowe określają wizję tworzonego projektu oraz cel jego realiza
 
 Wymagania funkcjonalne określają konkretne funkcje, które powinny znaleźć się w tworzonej aplikacji internetowej, aby założenia projektu zostały spełnione. Skupiają się na sposobie działania jego poszczególnych elementów, pełnią funkcję listy tego, co powinno zostać zaimplementowane \cite{wymagania}. 
 
-\subsubsection*{Test}
+\subsubsection*{Dostęp do systemu zarządzania treścią}
+
+Możliwość dodawania, edytowania i usuwania elementów powinna być zarezerwowana tylko dla osoby zarządzającej stroną internetową, wyłącznie za pomocą panelu administratora. Wyjątkiem są komentarze do postów oraz wpisy kontakowe, które mogą być dodawane za pomocą udostępnionego przez system REST API przez każdego użytkownika odwiedzającego stronę. 
+
+\subsubsection*{Struktura danych w systemie zarządzania treścią}
+
+Struktura danych w systemie zarządzania treścią powinna być zorganizowana zgodnie z układem strony. Została ona przedstawiona w formie diagramu na rysunku \ref{fig:diagram-typu-tresci.png}. Dla ulepszenia czytelności diagramu została użyta następująca konwencja kolorów: elementy żółte to kolekcje, co oznacza, że mogą występować wielokrotnie (np. posty). Kolorem niebieskim zaznaczone są komponenty, które w tym przypadku składają się na treść posta w formie zaznaczonej na biało ``strefy dynamicznej'' (ang. \textit{dynamic zone}) --- pozwala to na stworzenie treści posta złożonego z komponentów ustawionych w dowolnej kolejności (przykładowo może to być jeden akapit, po którym następują dwa zdjęcia). Na pomarańczowo zaznaczone zostały typy pojedyncze, takie jak treść strony ``o mnie'' lub strony głównej. Kolor czerwony oznacza natomiast typ wyliczeniowy, który w tym przypadku odpowiada za kategorię, do jakiej przypisany może zostać post na blogu.
+
+\begin{figure}[H] 
+    \centering
+         \fbox{\includegraphics[width=0.99\textwidth]{images/diagram-typu-tresci.png}}
+   \caption{Diagram struktury danych w systemie zarządzania treści Strapi.}
+   \label{fig:diagram-typu-tresci.png}
+\end{figure}
+
+\subsubsection*{Optymalizacja strony dla wyszukiwarek internetowych (SEO)}
+
+Aby w pełni wykorzystać możliwości tworzonej strony internetowej, powinna ona trafić do jak największej liczby odbiorców. W tym celu konieczna jest jej optymalizacja dla wyszukiwarek internetowych. Można to osiągnąć poprzez wykorzystanie renderowania po stronie serwera (SSR --- ang. \textit{Server-Side Rendering}) oraz generowania statycznej strony (SSG --- ang. \textit{Static Site Generation}). Dzięki SSG oraz SSR wyszukiwarki internetowe lepiej radzą sobie z indeksowaniem stron, co zwiększa szansę na znalezienie takiej strony przez potencjalnego użytkownika. Kolejnym sposobem na optymalizację SEO jest zastosowanie unikalnego ciągu znaków w formie tzw. \textit{sluga} do stworzenia linków do postów na blogu oraz projektów z portfolio zamiast standardowego identyfikatora występującego najczęściej po prostu w formie liczby całkowitej. Dobrą praktyką jest zawieranie jak największej liczby słów kluczowych związanych z tematyką danego postu lub przedmiotem zdjęć zamieszczonych w projekcie \cite{seo}.
+
+\subsubsection*{Portfolio i projekty}
+
+Użytkownik odwiedzający projekt w portfolio fotografa powinien mieć możliwość wyświetlenia wybranego zdjęcia w większym formacie. Aby w pełni skupić jego uwagę na oglądanej fotografii, powinna ona się pojawiać w formie wyskakującego okienka z przyciemnionym lub rozmazanym tłem (którym jest strona projektu) oraz możliwością jego zamknięcia poprzez ponowne kliknięcie. 
+
+\subsubsection*{Blog i posty}
+
+Lista postów powinna być stworzona z wykorzystaniem paginacji, aby wyeliminować problem zbyt dużej ilości miniaturek postów na stronie. Użytkownik powinien mieć możliwość wyświetlania i dodawania komentarzy do postów na blogu w celu nawiązywania dyskusji z innymi użytkownikami i wyrażania opinii na temat treści danych postów. W przypadku braku komentarzy, pod postem powinien pojawić się napis ``brak komentarzy'' w celu zachęcenia osoby odwiedzającej blog do rozpoczęcia dyskusji. 
+
+
+\subsubsection*{Sposoby kontaktu}
+
+Aby umożliwić podjęcie kontaktu w dowolnie wybrany przez użytkownika sposób, powinny zostać podjęte kroki ułatwiające wykonanie tej czynności. Pierwszym sposobem jest udostępnienie formularza kontaktowego, który pozwoli na wysłanie wiadomości bezpośrednio przez odwiedzaną stronę internetową. Ważną częścią formularza jest jego walidacja --- użytkownik musi wiedzieć, czy wpisane przez niego dane są poprawne, a po wysłaniu --- czy podjęta próba kontaktu powiodła się. Kolejne rozwiązanie to umieszczenie na stronie (np. w stopce) numeru telefonu oraz adresu poczty elektronicznej. Dane te powinny być oznaczone w strukturze strony jako kotwica (ang. \textit{anchor}) oraz posiadać odpowiednie przedrostki (przykład dla adresu poczty elektronicznej w listingu \ref{chapter4:anchor}). Ostatnim sposobem na ułatwienie kontaktu osobie odwiedzającej stronę jest podanie odnośników do mediów społecznościowych, w szczególności Instagrama oraz Facebooka, które są głównymi serwisami wykorzystywanymi w branży fotograficznej. \newline\newline
+
+\begin{code}[htbp]
+    \lstinputlisting{./code/anchor_example.txt}
+    \caption
+    [Przykład zastosowania znacznika \textit{a} dla adresu poczty elektronicznej.]
+    {Przykład zastosowania znacznika \textit{a} dla adresu poczty elektronicznej.}
+    \label{chapter4:anchor}
+\end{code}
 
 %% Wymagania niefunkcjonalne
 
@@ -425,11 +514,22 @@ Wymagania funkcjonalne określają konkretne funkcje, które powinny znaleźć s
 
 W odróżnieniu od wymagań funkcjonalnych, wymagania niefunkcjonalne określają ogólne cechy tworzonej aplikacji. Dotyczą one między innymi jego jakości oraz dostępności. Skupiają się nie na tym, co robi produkt, lecz na tym, jak dobrze to robi \cite{wymagania}.
 
-\subsubsection*{}
+\subsubsection*{Szybkość ładowania strony, wykorzystanie SSG i SSR}
+
+Aby wrażenie użytkownika odwiedzającego stronę było jak najlepsze, strona powinna ładować się szybko (razem ze zdjęciami). Pomocne (a zarazem przydatne do spełnienia wymagań zarówno funkcjonalnych jak i niefunkcjonalnych) do osiągnięcia tego celu jest wykorzystanie SSG oraz SSR, które są wbudowanymi funkcjonalnościami szkieletu aplikacyjnego Next.js. 
+
+\subsubsection*{Wygląd strony}
+
+
 
 %% Realizacja projektu 
 
+
 \subsection{Realizacja projektu} \label{realizacja}
+
+\subsubsection{Strapi --- stworzenie struktury danych oraz konfiguracja systemu zarządzania treścią}
+
+\subsubsection{Next.js --- implementacja strony internetowej z użyciem SSG oraz SSR}
 
 % Portfolio i blog
 
@@ -441,10 +541,13 @@ W odróżnieniu od wymagań funkcjonalnych, wymagania niefunkcjonalne określaj�
 
 \subsection{System zarządzania treścią}
 
+Jednym z dwóch głównych elementów tworzonej strony internetowej jest system zarządzania treścią, którym jest Strapi. Aby z niego skorzystać, należy zalogować się do panelu administracyjnego, gdzie dostępny jest menedżer treści (ang. \textit{Content Manager}) pozwalający na dodawanie, edycję i usuwanie treści, które są widoczne dla osób odwiedzających stronę. 
 
 %% Strona internetowa
 
 \subsection{Strona internetowa}
+
+Strona internetowa z portfolio oraz blogiem jest drugą, widoczną dla dowolnego użytkownika częścią tworzonego projektu. 
 
 % Podsumowanie
 
@@ -618,6 +721,11 @@ W odróżnieniu od wymagań funkcjonalnych, wymagania niefunkcjonalne określaj�
     Helion,
     2014.
     
+    \bibitem{seo},
+    Eric Enge, Stephan Spencer, Jessie Stricchiola,
+    \textit{SEO, czyli sztuka optymalizacji witryn dla wyszukiwarek},
+    Helion,
+    2016.
 
         
 \end{thebibliography}
