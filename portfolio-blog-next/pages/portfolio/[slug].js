@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
+import Image from 'next/image';
 import ImageModal from '../../components/imagemodal/ImageModal';
 
 export default function Project({data}) {
@@ -23,10 +24,11 @@ export default function Project({data}) {
       <div className='portfolio-masonry-container'>
          <div className='portfolio-masonry'>
             {data.data.attributes.photos.data.map(photo => (
-               <img onClick={(e) => {
-               setIsOpen(true);
-               setModalUrl(e.target.src)
-            }} src={url +  photo.attributes.url} />
+                  <img 
+                  onClick={(e) => {
+                  setIsOpen(true);
+                  setModalUrl(e.target.src)
+               }} src={url +  photo.attributes.url} />
             ))}
          </div>
       </div>

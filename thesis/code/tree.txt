@@ -1,0 +1,17 @@
+pages
+|  404.js
+|  about.js
+|  contact.js
+|  index.js
+|  services.js
+|  _app.js
+|  _document.js
+|   
+|---blog
+|       index.js
+|       [slug].js
+|       
+|---portfolio
+|        index.js
+|        [slug].js
+        

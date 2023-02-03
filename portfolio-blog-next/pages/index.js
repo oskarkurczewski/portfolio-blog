@@ -14,11 +14,15 @@ function Home({data}) {
       <div className='mainpage-content'>
         <div className='photos-container'>
           <div className='square-images'>
-            <Image src={url +  data.data.attributes.squarephotos.data[0].attributes.url} width={300} height={300} alt={data.data.attributes.squarephotos.data[0].attributes.alternativeText}/>
-            <Image src={url +  data.data.attributes.squarephotos.data[1].attributes.url} width={300} height={300} alt={data.data.attributes.squarephotos.data[1].attributes.alternativeText}/>
+            <div className='square-image'>
+              <Image src={url +  data.data.attributes.squarephotos.data[0].attributes.url} fill alt={data.data.attributes.squarephotos.data[0].attributes.alternativeText}/>
+            </div>
+            <div className='square-image'>
+              <Image src={url +  data.data.attributes.squarephotos.data[1].attributes.url} fill alt={data.data.attributes.squarephotos.data[1].attributes.alternativeText}/>
+            </div>
           </div>
-          <div className='obrazek'>
-          <Image src={url +  data.data.attributes.verticalphoto.data.attributes.url} fill alt={data.data.attributes.verticalphoto.data.attributes.alternativeText}/>
+          <div className='tall-image'>
+            <Image src={url +  data.data.attributes.verticalphoto.data.attributes.url} fill alt={data.data.attributes.verticalphoto.data.attributes.alternativeText}/>
           </div>
         </div>
         <div className='menu-container'>
@@ -26,35 +30,35 @@ function Home({data}) {
             <h3>
               PORTFOLIO
             </h3>
-            <img src="/arrow-left-long-solid.svg" alt="arrow" width={50} height={50}/>
+            <img src="/arrow-left-long-solid.svg" alt="arrow"/>
           </Link>
           <div className='dot'></div>
           <Link href="/services">
             <h3>
               USŁUGI
             </h3>
-            <img src="/arrow-left-long-solid.svg" alt="arrow" width={50} height={50}/>
+            <img src="/arrow-left-long-solid.svg" alt="arrow"/>
           </Link>
           <div className='dot'></div>
           <Link href="/blog">
             <h3>
               BLOG
             </h3>
-            <img src="/arrow-left-long-solid.svg" alt="arrow" width={50} height={50}/>
+            <img src="/arrow-left-long-solid.svg" alt="arrow" />
           </Link>
           <div className='dot'></div>
           <Link href="/about">
             <h3>
               O MNIE
             </h3>
-            <img src="/arrow-left-long-solid.svg" alt="arrow" width={50} height={50}/>
+            <img src="/arrow-left-long-solid.svg" alt="arrow"/>
           </Link>
           <div className='dot'></div>
           <Link href="/contact">
             <h3>
               KONTAKT
             </h3>
-            <img src="/arrow-left-long-solid.svg" alt="arrow" width={50} height={50}/>
+            <img src="/arrow-left-long-solid.svg" alt="arrow"/>
           </Link>
         </div>
       </div>

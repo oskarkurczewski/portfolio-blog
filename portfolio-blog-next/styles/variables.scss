@@ -17,7 +17,31 @@ $category-green: rgba(0, 75, 0, 0.4);
 $category-blue: rgb(37, 37, 129, 0.4);
 
 // Breakpoints
-$screen-sm-min: 320px;
+$screen-sm-min: 0px;
 $screen-md-min: 768px;
 $screen-lg-min: 1024px;
 $screen-xl-min: 1200px;
+
+@mixin sm {
+   @media (min-width: #{$screen-sm-min}) {
+      @content;
+   }
+}
+
+@mixin md {
+   @media (min-width: #{$screen-md-min}) {
+      @content;
+   }
+}
+
+@mixin lg {
+   @media (min-width: #{$screen-lg-min}) {
+      @content;
+   }
+}
+
+@mixin xl {
+   @media (min-width: #{$screen-xl-min}) {
+      @content;
+   }
+}

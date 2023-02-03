@@ -1,16 +1,26 @@
 @use "../../styles/variables.scss" as variables;
+@import "../../styles/variables.scss";
 
 .navbar {
    display: flex;
    flex-direction: column;
    align-items: center;
+   white-space: nowrap;
 
    a {
       text-decoration: none;
       color: variables.$text-black;
 
       h1 {
-         font-size: 3.5rem;
+         @include sm {
+            font-size: 1rem;
+         }
+         @include md {
+            font-size: 2rem;
+         }
+         @include lg {
+            font-size: 3.5rem;
+         }
          font-weight: 200;
          margin-top: 1rem;
          margin-bottom: 10px;
@@ -28,8 +38,19 @@
       align-items: center;
       justify-content: center;
       justify-items: center;
-      gap: 15px;
-      margin-top: 10px;
+
+      @include sm {
+         gap: 6px;
+         margin: 5px 5px 0 5px;
+      }
+      @include md {
+         gap: 8px;
+         margin: 8px 8px 0 8px;
+      }
+      @include lg {
+         gap: 15px;
+         margin: 10px 5px 0 5px;
+      }
       
 
       a {
@@ -48,8 +69,19 @@
       }
 
       .dot {
-         height: 8px;
-         width: 8px;
+         @include sm {
+            height: 2px;
+            width: 2px; 
+         }
+         @include md {
+            height: 6px;
+            width: 6px; 
+         }
+         @include lg {
+            height: 8px;
+            width: 8px;
+         }
+         
          border-radius: 50%;
          background: variables.$text-black;
       }
@@ -59,12 +91,19 @@
       }
 
       h3 {
+         @include sm {
+            font-size: 0.8rem;
+         }
+         @include md {
+            font-size: 1rem;
+         }
+         @include lg {
+            font-size: 1.5rem;
+         }
          margin-top: 0px;
          margin-bottom: 0px;
          font-size: 1.5rem;
          font-weight: 200;
-
-         
       }
    }
 

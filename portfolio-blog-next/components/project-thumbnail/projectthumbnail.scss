@@ -1,8 +1,8 @@
 @use "../../styles/variables.scss" as variables;
-
+@import "../../styles/variables.scss";
 
 .project-thumbnail {
-   width: 900px;
+   width: 100%;
    height: auto;
    display: flex;
    flex-direction: column;
@@ -15,7 +15,15 @@
 
       p {
          color: variables.$text-black;
-         font-size: 1.5rem;
+         @include sm {
+            font-size: 0.8rem;
+         }
+         @include md {
+            font-size: 1rem;
+         }
+         @include lg {
+            font-size: 1.5rem;
+         }
          font-weight: 300;
          margin: 0px;   
       }

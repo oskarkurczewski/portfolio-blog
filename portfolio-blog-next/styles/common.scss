@@ -1,5 +1,6 @@
 @use "variables.scss" as variables;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "./variables.scss";
 
 body {
    background: variables.$background-white;
@@ -7,6 +8,5 @@ body {
    display: flex;
    flex-direction: column;
    align-items: center;
-   min-width: fit-content;
    margin: 0;
 }

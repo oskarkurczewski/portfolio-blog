@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function NotFound() {
   return (
     <div className='not-found-container'>
-      <Image src={error404} width={400} alt="404 :("></Image>
+      <Image src={error404} alt="404 :("></Image>
       <h1>Nie znaleziono.</h1>
       <Link href='/'>
         <div className='button'>

@@ -1,6 +1,7 @@
 @use "variables.scss" as variables;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "./common.scss";
+@import "./variables.scss";
 
 // components
 
@@ -27,33 +28,90 @@
    display: flex;
    flex-grow: 1;
    flex-direction: column;
-   margin-top: 120px;
    align-items: center;
    align-content: center;
-   width: 1100px;
+   @include sm {
+      width: 350px;
+      margin-top: 20px;
+   }
+   @include md {
+      width: 600px;
+      margin-top: 60px;
+   }
+   @include lg {
+      width: 1100px;
+      margin-top: 120px;
+   }
+
+   img {
+      @include sm {
+         width: 204px;
+      }
+      @include md {
+         width: 304px;
+      }
+      @include lg {
+         width: 404px;
+      }
+   }
 
    a {
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 20px;
+
+      @include sm {
+         gap: 5px;
+      }
+      @include md {
+         gap: 10px;
+      }
+      @include lg {
+         gap: 20px;
+      }
       color: variables.$text-black;
 
       .button {
          background-color: variables.$text-black;
          color: variables.$background-white;
          border: 1px solid variables.$text-black;
-         margin-top: 50px;
+
+         @include sm {
+            margin-top: 15px;
+         }
+         @include md {
+            margin-top: 30px;
+         }
+         @include lg {
+            margin-top: 50px;
+         }
          transition: background-color 0.5s;
          transition: color 0.5s;
 
          h2 {
             font-weight: 300;
-            font-size: 1.5rem;
-            padding-left: 40px;
-            padding-right: 40px;
-            margin-top: 12px;
-            margin-bottom: 12px;
+            @include sm {
+               font-size: 1rem;
+               padding-left: 15px;
+               padding-right: 15px;
+               margin-top: 8px;
+               margin-bottom: 8px;
+            }
+            @include md {
+               font-size: 1.2rem;
+               padding-left: 20px;
+               padding-right: 20px;
+               margin-top: 8px;
+               margin-bottom: 8px;
+            }
+            @include lg {
+               font-size: 1.5rem;
+               padding-left: 40px;
+               padding-right: 40px;
+               margin-top: 12px;
+               margin-bottom: 12px; 
+            }
+            
          }
       }
 
@@ -68,24 +126,61 @@
 .mainpage-container {
    display: flex;
    flex-grow: 1;
-   margin-top: 50px;
    margin-bottom: 120px;
-   width: 1100px;
    justify-content: center;
+
+   @include sm {
+      width: 350px;
+      margin-top: 20px;
+   }
+   @include md {
+      width: 600px;
+      margin-top: 30px;
+   }
+   @include lg {
+      width: 1100px;
+      margin-top: 50px;
+   }
 
    .mainpage-content {
       display: flex;
       height: fit-content;
 
+      @include sm {
+         gap: 10px;
+      }
+      @include md {
+         gap: 20px;
+      }
+      @include lg {
+         gap: 50px;
+      }
+
       .photos-container {
          display: flex;
-         gap: 10px;
-         margin-right: 50px;
-   
-         .obrazek {
+     
+         @include sm {
+            gap: 5px;
+            flex-direction: column;
+         }
+         @include md { 
+            flex-direction: row;
+         }
+         @include lg {
+            gap: 10px;
+            flex-direction: row;
+         }
+
+         .tall-image {
             position: relative;
-            height: 610px;
-            width: 400px;
+
+            @include sm {
+               height: 305px;
+            }
+            @include lg {
+               height: 610px;
+            }
+            aspect-ratio: 2/3;
             overflow: hidden;
          }
 
@@ -93,31 +188,71 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            gap: 10px;
             overflow: hidden;
-         }
+            @include sm {
+               display: none;
+               gap: 5px;
+            }
+            @include md {
+               display: flex;
+            }
+            @include lg {
+               display: flex;
+               gap: 10px;
+            }
 
-         
-   
+            .square-image {
+               position: relative;
+               @include sm {
+                  height: 150px;
+               }
+               @include lg {
+                  height: 300px;
+               }
+               aspect-ratio: 1/1;
+            }
+         }
       }
    
       .menu-container {
          display: flex;
          flex-direction: column;
-         align-items: flex-start;
          justify-content: center;
+         align-items: flex-start;
    
          a {
             display: flex;
             align-items: center;
-            gap: 20px;
             color: variables.$text-black;
    
+            @include sm {
+               gap: 2px;
+            }
+            @include md {
+               gap: 5px;
+            }
+            @include lg {
+               gap: 20px;
+            }
+
             h3 {
-               font-size: 3rem;
+               @include sm {
+                  font-size: 1rem;
+                  margin-top: 1px;
+                  margin-bottom: 1px;
+               }
+               @include md {
+                  font-size: 1.5rem;
+                  margin-top: 2px;
+                  margin-bottom: 2px;
+               }
+               @include lg {
+                  font-size: 3rem;
+                  margin-top: 4px;
+                  margin-bottom: 4px;
+               }
                font-weight: 200;
-               margin-top: 4px;
-               margin-bottom: 4px;
+               
             }
    
          }
@@ -146,6 +281,16 @@
          a {
             img {
                transition: opacity 0.4s;
+               aspect-ratio: 1/1;
+               @include sm {
+                  width: 10px;
+               }
+               @include md {
+                  width: 20px;
+               }
+               @include lg {
+                  width: 50px;
+               }
             }
          }
          
@@ -158,7 +303,15 @@
 .about-container {
    margin-top: 50px;
    flex-grow: 1;
-   width: 1100px;
+   @include sm {
+      width: 350px;
+   }
+   @include md {
+      width: 600px;
+   }
+   @include lg {
+      width: 1100px;
+   }
    display: flex;
    align-items: center;
    flex-direction: column;
@@ -167,7 +320,15 @@
 
    .image-container{
       width: 100%;
-      height: 400px;
+      @include sm {
+         height: 100px;
+      }
+      @include md {
+         height: 200px;
+      }
+      @include lg {
+         height: 400px;
+      }
       position: relative;
    
       img {
@@ -178,18 +339,42 @@
    .text {
       text-align: left;
       text-justify: inter-word;
-      width: 600px;
+      @include sm {
+         width: 300px;
+      }
+      @include md {
+         width: 450px;
+      }
+      @include lg {
+         width: 600px;
+      }
       text-align: justify;
 
       h1 {
          font-weight: 400;
-         font-size: 1.3rem;
+         @include sm {
+            font-size: 1rem;
+         }
+         @include md {
+            font-size: 1rem;
+         }
+         @include lg {
+            font-size: 1.3rem;
+         }
          margin-top: 0px;
          margin-bottom: 20px;
       }
 
       p {
-         font-size: 1.3rem;
+         @include sm {
+            font-size: 1rem;
+         }
+         @include md {
+            font-size: 1rem;
+         }
+         @include lg {
+            font-size: 1.3rem;
+         }
          font-weight: 200;
       }
 
@@ -203,9 +388,19 @@
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   margin-top: 50px;
    width: 100%;
-   height: 250px;
+   @include sm {
+      height: 100px;
+      margin-top: 20px;
+   }
+   @include md {
+      height: 200px;
+      margin-top: 30px;
+   }
+   @include lg {
+      height: 250px;
+      margin-top: 50px;
+   }
    color: variables.$white;
    overflow: hidden;
    
@@ -223,16 +418,33 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.50);
+      text-align: center;
 
       h2 {
          font-weight: 300;
-         font-size: 3rem;
+         @include sm {
+            font-size: 1rem;
+         }
+         @include md {
+            font-size: 2rem;
+         }
+         @include lg {
+            font-size: 3rem;
+         }
          margin: 0;
       }
    
       h3 {
          font-weight: 300;
-         font-size: 1.5rem;
+         @include sm {
+            font-size: 1rem;
+         }
+         @include md {
+            font-size: 1.2rem;
+         }
+         @include lg {
+            font-size: 1.5rem;
+         }
          margin: 0;
       }
    }     
@@ -240,18 +452,43 @@
 
 .post-container {
    flex-grow: 1;
-   width: 1100px;
+   @include sm {
+      width: 350px;
+   }
+   @include md {
+      width: 600px;
+   }
+   @include lg {
+      width: 1100px;
+   }
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding-bottom: 130px;
+   @include sm {
+      padding-bottom: 90px;
+   }
+   @include md {
+      padding-bottom: 100px;
+   }
+   @include lg {
+      padding-bottom: 130px;
+   }
 
    .date {
       text-align: center;
 
       p {
          font-style: italic;
-         font-size: 1.2rem;
+         
+         @include sm {
+            font-size: 0.8rem;
+         }
+         @include md {
+            font-size: 1rem;
+         }
+         @include lg {
+            font-size: 1.2rem;
+         }
       }
    }
 
@@ -277,14 +514,30 @@
 
          p {
             margin-top: 8px;
-            font-size: 1rem;
+            @include sm {
+               font-size: 0.7rem;
+            }
+            @include md {
+               font-size: 0.8rem;
+            }
+            @include lg {
+               font-size: 1rem;
+            }
             font-weight: 200;
          }
       }
 
       p {
          font-weight: 300;
-         font-size: 1.2rem;
+         @include sm {
+            font-size: 0.8rem;
+         }
+         @include md {
+            font-size: 1rem;
+         }
+         @include lg {
+            font-size: 1.2rem;
+         }
          margin-bottom: 30px;
          margin-top: 0px;
       }
@@ -307,7 +560,15 @@
 
       h3 {
          font-weight: 300;
-         font-size: 2rem;
+         @include sm {
+            font-size: 1rem;
+         }
+         @include md {
+            font-size: 1.5rem;
+         }
+         @include lg {
+            font-size: 2rem;
+         }
          margin: 0;
          margin-top: 1.5rem;
          margin-bottom: 1.5rem;
@@ -331,7 +592,15 @@
             height: 100px;
             padding: 10px;
             box-sizing: border-box;
-            font-size: 1rem;
+            @include sm {
+               font-size: 0.7rem;
+            }
+            @include md {
+               font-size: 0.8rem;
+            }
+            @include lg {
+               font-size: 1rem;
+            }
          }
 
          .submitter {
@@ -348,6 +617,15 @@
                margin-right: 10px;
                padding-bottom: 0px;
                padding-top: 0px;
+               @include sm {
+                  font-size: 0.9rem;
+               }
+               @include md {
+                  font-size: 1rem;
+               }
+               @include lg {
+                  font-size: 1.3rem;
+               }
             }
 
             input {
@@ -377,7 +655,15 @@
    
 
    .line {
-      width: 600px;
+      @include sm {
+         width: 200px;
+      }
+      @include md {
+         width: 300px;
+      }
+      @include lg {
+         width: 600px;
+      }
       height: 1px;
       background: variables.$text-black;
    }
@@ -387,11 +673,28 @@
    display: flex;
    justify-content: center;
    margin-top: 50px;
-   width: 1100px;
+   @include sm {
+      width: 350px;
+   }
+   @include md {
+      width: 600px;
+   }
+   @include lg {
+      width: 1100px;
+   }
 
    .cards-container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      
+      @include sm {
+         grid-template-columns: repeat(1, 1fr);
+      }
+      @include md {
+         grid-template-columns: repeat(2, 1fr);
+      }
+      @include lg {
+         grid-template-columns: repeat(3, 1fr);
+      }
       grid-auto-rows: auto;
       grid-gap: 50px;
 
@@ -455,16 +758,37 @@
    align-items: center;
    justify-content: flex-start;
    flex-grow: 1;
-   margin-top: 50px;
-   width: 1100px;
+   @include sm {
+      width: 350px;
+      margin-top: 30px;
+   }
+   @include md {
+      width: 600px;
+      margin-top: 40px;
+   }
+   @include lg {
+      width: 1100px;
+      margin-top: 50px;
+   }
    padding-bottom: 130px;
 
    h2 {
       text-align: justify;
       font-weight: 300;
-      font-size: 1.5rem;
-      margin-top: 0px;
-      margin-bottom: 40px;
+      @include sm {
+         font-size: 1rem;
+         margin-bottom: 20px;
+      }
+      @include md {
+         font-size: 1.2rem;
+         margin-bottom: 30px;
+      }
+      @include lg {
+         font-size: 1.5rem;
+         margin-bottom: 40px;
+      }
+      margin-top: 5px;
+
    }
 
    
@@ -472,9 +796,20 @@
    form {
       display: flex;
       flex-direction: column;
-      font-size: 1rem;
+      @include sm {
+         font-size: 0.7rem;
+         padding-bottom: 20px;
+      }
+      @include md {
+         font-size: 0.8rem;
+         padding-bottom: 30px;
+      }
+      @include lg {
+         font-size: 1rem;
+         padding-bottom: 50px;
+      }
       gap: 20px;
-      padding-bottom: 50px;
+
 
       .contact-row {
          display: flex;
@@ -527,7 +862,15 @@
          border: 1px solid variables.$text-black;
          font-family: "Inter", sans-serif;
          margin-top: 4px;
-         font-size: 1rem;
+         @include sm {
+            font-size: 0.7rem;
+         }
+         @include md {
+            font-size: 0.8rem;
+         }
+         @include lg {
+            font-size: 1rem;
+         }
       }
 
       input {
@@ -567,7 +910,32 @@
 
    .contact-links-container {
       display: flex;
-      gap: 40px;
+
+      @include sm {
+         gap: 20px;
+      }
+      @include md {
+         gap: 30px;
+      }
+      @include lg {
+         gap: 40px;
+      }
+
+      img {
+         @include sm {
+            width: 30px;
+            aspect-ratio: 1/1;
+         }
+         @include md {
+            width: 40px;
+            aspect-ratio: 1/1;
+         }
+         @include lg {
+            width: 50px;
+            aspect-ratio: 1/1;
+         }
+
+      }
 
       a:not(:hover) {
          img {
@@ -591,9 +959,21 @@
    flex-direction: row;
    flex-grow: 1;
    gap: 40px;
-   width: 1100px;
+   @include sm {
+      width: 350px;
+      padding-top: 20px;
+   }
+
+   @include md {
+      width: 600px;
+      padding-top: 20px;
+   }
+   @include lg {
+      width: 1100px;
+      padding-top: 30px;
+   }
    padding-bottom: 100px;
-   padding-top: 30px;
+   
 
    @media (min-width: variables.$screen-sm-min) {
       flex-direction: column;
@@ -619,7 +999,15 @@
    align-items: center;
    flex-grow: 1;
    gap: 40px;
-   width: 1100px;
+   @include sm {
+      width: 350px;
+   }
+   @include md {
+      width: 600px;
+   }
+   @include lg {
+      width: 1100px;
+   }
    padding-bottom: 200px;
    margin-top: 50px;
 }
@@ -639,13 +1027,29 @@
       align-self: flex-start;
 
       h2 {
-         font-size: 2rem;
+         @include sm {
+            font-size: 1rem;
+         }
+         @include md {
+            font-size: 1.5rem;
+         }
+         @include lg {
+            font-size: 2rem;
+         }
          font-weight: 200;
          margin: 0;
       }
 
       h3 {
-         font-size: 1.5rem;
+         @include sm {
+            font-size: 0.8rem;
+         }
+         @include md {
+            font-size: 1rem;
+         }
+         @include lg {
+            font-size: 1.5rem;
+         }
          font-weight: 200;
          margin: 0;
       }
@@ -657,13 +1061,32 @@
 
       .portfolio-masonry {
       column-count: 2;
-      column-gap: 20px;
+      
+      @include sm {
+         column-gap: 8px;
+      }
+      @include md {
+         column-gap: 12px;
+      }
+      @include lg {
+         column-gap: 20px;
+      }
       width: min-content;
       height: auto;
       
       img {
-         width: 500px;
-         margin-bottom: 14px;
+         @include sm {
+            width: 175px;
+            margin-bottom: 4px;
+         }
+         @include md {
+            width: 300px;
+            margin-bottom: 8px;
+         }
+         @include lg {
+            width: 500px;
+            margin-bottom: 14px;
+         }
          cursor: zoom-in;
       }
 

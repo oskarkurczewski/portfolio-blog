@@ -27,9 +27,12 @@
 \usepackage[figuresleft]{rotating}
 \usepackage{afterpage}
 \usepackage[bottom]{footmisc}
+\usepackage{multirow}
+\usepackage{vcell}
+\usepackage{diagbox}
 
 % nagłówki
-%\usepackage{fancyhdr}
+% \usepackage{fancyhdr}
 
 % podpisy nad tabelami
 \floatstyle{plaintop}
@@ -147,7 +150,7 @@ Celem pracy jest zaprojektowanie oraz implementacja personalnej strony interneto
 
 \subsection{Układ pracy}
 
-Rozdział pierwszy wprowadza do tematyki oraz problematyki pracy. Drugi rozdział jest przeglądem istniejących rozwiązań --- personalnych stron-wizytówek popularnych zagranicznych fotografów koncertowych, portali społecznościowych używanych w branży, a także blogów i innych stron o tematyce muzycznej. W rozdziale trzecim przedstawione są narzędzia, które zostały wykorzystane podczas projektowania oraz implementacji tworzonej strony internetowej. Rozdział czwarty poświęcony jest projektowi portfolio i blogu --- znalazły się w nim założenia projektu, wymagania funkcjonalne i niefunkcjonalne oraz opis realizacji projektu. Piąty rozdział jest prezentacją wykonanej strony internetowej, a szósty podsumowuje realizację projektu, celu oraz założeń pracy.
+Rozdział pierwszy wprowadza do tematyki oraz problematyki pracy. Drugi rozdział jest przeglądem istniejących rozwiązań --- personalnych stron-wizytówek popularnych zagranicznych fotografów koncertowych, portali społecznościowych używanych w branży, a także blogów i innych stron o tematyce muzycznej. W rozdziale trzecim przedstawione są narzędzia, które zostały wykorzystane podczas projektowania oraz implementacji tworzonej strony internetowej. Rozdział czwarty poświęcony jest projektowi portfolio \linebreak i blogu --- znalazły się w nim założenia projektu, wymagania funkcjonalne \linebreak i niefunkcjonalne oraz opis realizacji projektu. Piąty rozdział jest prezentacją wykonanej strony internetowej, a szósty podsumowuje realizację projektu, celu oraz założeń pracy.
 
 % Przegląd istniejących rozwiązań 
 
@@ -171,7 +174,7 @@ Ashley Osborn jest amerykańską fotografką zamieszkałą w Los Angeles. Specja
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/ashley-1.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/ashley-1.jpg}}
    \caption{\textit{\url{www.ashleyosborn.com}} --- strona główna.}
    \label{fig:ashley-1.jpg}
 \end{figure}
@@ -180,14 +183,14 @@ Rysunek \ref{fig:ashley-1.jpg} przedstawia wygląd strony głównej witryny inte
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/ashley-2.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/ashley-2.jpg}}
    \caption{\textit{\url{www.ashleyosborn.com}} --- sekcja ``o mnie''.}
    \label{fig:ashley-2.jpg}
 \end{figure}
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/ashley-3.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/ashley-3.jpg}}
    \caption{\textit{\url{www.ashleyosborn.com}} --- formularz kontaktowy.}
    \label{fig:ashley-3.jpg}
 \end{figure}
@@ -200,14 +203,14 @@ Ostatnią sekcją strony Ashley Osborn jest blog, skonstruowany w prosty sposób
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/ashley-4.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/ashley-4.jpg}}
    \caption{\textit{\url{www.ashleyosborn.com}} --- blog (lista postów).}
    \label{fig:ashley-4.jpg}
 \end{figure}
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/ashley-5.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/ashley-5.jpg}}
    \caption{\textit{\url{www.ashleyosborn.com}} --- blog (widok postu).}
    \label{fig:ashley-5.jpg}
 \end{figure}
@@ -221,14 +224,14 @@ Ostatnią sekcją strony Ashley Osborn jest blog, skonstruowany w prosty sposób
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/zackery-1.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/zackery-1.jpg}}
    \caption{\textit{\url{www.zackerymichaelstudio.com}} --- strona główna.}
    \label{fig:zackery-1.jpg}
 \end{figure}
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/zackery-2.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/zackery-2.jpg}}
    \caption{\textit{\url{www.zackerymichaelstudio.com}} --- sekcja kontaktowa.}
    \label{fig:zackery-2.jpg}
 \end{figure}
@@ -239,7 +242,7 @@ Druga przedstawiona strona-wizytówka jest zupełnie inna w porównaniu do poprz
 
 \subsection{Portale społecznościowe}
 
-Wraz z rozwojem technologii internetowych pojawiły się portale społecznościowe, które w dzisiejszych czasach mają ogromne znaczenie zarówno w znaczeniu społecznym (ułatwiają kontakt oraz zawieranie nowych znajomości przez Internet), jak i biznesowym (ze względu na wielką popularność są potężnym narzędziem marketingowym i źródłem pozyskiwania klientów). W kontekście zawodu fotografa są one o tyle ważne, że Instagram oraz Facebook, czyli te najbardziej popularne, są w dużej mierze oparte na udostępnianiu zdjęć. Pomaga to w budowaniu marki osobistej osoby świadczącej usługi fotograficzne, co ułatwia zdobywanie nowych zleceń i poszerzanie działalności poza rynek lokalny \cite{socialmedia}. Wspomniane portale społecznościwe zostaną w tym rozdziale opisane pod kątem prezentacji treści, zwłaszcza postów (Facebook) i zdjęć (Instagram) oraz profilów użytkownika.
+Wraz z rozwojem technologii internetowych pojawiły się portale społecznościowe, które w dzisiejszych czasach pełnią bardzo ważną funkcję zarówno w znaczeniu społecznym (ułatwiają kontakt oraz zawieranie nowych znajomości przez Internet), jak i biznesowym (ze względu na wielką popularność są potężnym narzędziem marketingowym i źródłem pozyskiwania klientów). W~kontekście zawodu fotografa są one o tyle ważne, że Instagram oraz Facebook, czyli te najbardziej popularne, są w dużej mierze oparte na udostępnianiu zdjęć. Pomaga to w budowaniu marki osobistej osoby świadczącej usługi fotograficzne, co ułatwia zdobywanie nowych zleceń i poszerzanie działalności poza rynek lokalny \cite{socialmedia}. Wspomniane portale społecznościowe zostaną w tym rozdziale opisane pod kątem prezentacji treści, zwłaszcza postów (Facebook) i zdjęć (Instagram) oraz profilów użytkownika.
 
 %%% Instagram
 
@@ -249,12 +252,12 @@ Instagram to powstały w 2010 roku \cite{instagramfirstday} portal społecznośc
 \begin{itemize}
     \item Część nagłówkowa ze zdjęciem profilowym, informacjami o liczbie postów, osób obserwujących oraz obserwowanych, opisem profilu oraz linkiem do strony internetowej.
     \item Zapisane relacje (ang. \textit{stories} --- wprowadzony w 2016 roku mechanizm Instagrama, pozwalający na udostępnianie zdjęć oraz filmów znikających po 24 godzinach \cite{stories}).
-    \item Galeria w postaci szerokiej na trzy elementy siatki kwadratowych zdjęć lub filmów. Warto zwrócić uwagę, że trzy pierwsze posty są przypięte, a kolejne --- ułożone w kolejności od najnowszych do najstarszych. Opcja przypinania postów daje użytkownikom większy wpływ na wygląd ich profilu poprzez wyróżnienie ulubionych zdjęć lub filmów.
+    \item Galeria w postaci szerokiej na trzy elementy siatki kwadratowych zdjęć lub filmów. Warto zwrócić uwagę, że trzy pierwsze posty są przypięte, \linebreak  a kolejne --- ułożone w kolejności od najnowszych do najstarszych. Opcja przypinania postów daje użytkownikom większy wpływ na wygląd ich profilu poprzez wyróżnienie ulubionych zdjęć lub filmów.
 \end{itemize}
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/instagram-1.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/instagram-1.jpg}}
    \caption{Instagram --- profil użytkownika.}
    \label{fig:instagram-1.jpg}
 \end{figure}
@@ -283,28 +286,28 @@ Posty mogą być wyświetlane oddzielnie. W zależności od tego, czy razem z ni
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/facebook-1.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/facebook-1.jpg}}
    \caption{Facebook --- widok profilu użytkownika ze zdjęciem w tle.}
    \label{fig:facebook-1.jpg}
 \end{figure}
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/facebook-2.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/facebook-2.jpg}}
    \caption{Facebook --- widok tablicy użytkownika po przewinięciu.}
    \label{fig:facebook-2.jpg}
 \end{figure}
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/facebook-3.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/facebook-3.jpg}}
    \caption{Facebook --- widok postu ze zdjęciem.}
    \label{fig:facebook-3.jpg}
 \end{figure}
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/facebook-4.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/facebook-4.jpg}}
    \caption{Facebook --- widok postu tekstowego (z osadzonym linkiem).}
    \label{fig:facebook-4.jpg}
 \end{figure}
@@ -333,7 +336,7 @@ Niniejszy rozdział przedstawia narzędzia, które zostały wykorzystane do wyko
 
 \begin{figure}[H] 
     \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/figma-1.jpg}}
+         \fbox{\includegraphics[width=0.95\textwidth]{images/figma-1.jpg}}
    \caption{Interfejs użytkownika narzędzia Figma.}
    \label{fig:figma-1.jpg}
 \end{figure}
@@ -350,7 +353,7 @@ Wcześniejsze wykonanie projektu graficznego tworzonej strony internetowej pozwa
    \caption{Logo języka JavaScript.}
 \end{figure}
 
-Do implementacji tworzonego projektu wykorzystany został \linebreak JavaScript (JS), czyli najpopularniejszy język programowania na świecie \cite{js}. Cechują go: wieloplatformowość, wysokopoziomowość i dynamiczne typowanie. Jako zaletę języka JavaScript można wymienić wsparcie dla wielu platform --- tworzone za jego pomocą aplikacje mogą być używane zarówno na urządzeniach mobilnych, jak i w przeglądarce. Ponadto duży wybór bibliotek oraz szkieletów aplikacyjnych ułatwia dobranie odpowiednich narzędzi do danego typu projektu.
+Przy implementacji tworzonego projektu wykorzystany został JavaScript~(JS), czyli najpopularniejszy język programowania na świecie \cite{js}. Cechują go: wieloplatformowość, wysokopoziomowość i dynamiczne typowanie. Jako zaletę języka JavaScript można wymienić wsparcie dla wielu platform --- tworzone za jego pomocą aplikacje mogą być używane zarówno na urządzeniach mobilnych, jak i w przeglądarce. Ponadto duży wybór bibliotek oraz szkieletów aplikacyjnych ułatwia dobranie odpowiednich narzędzi do danego typu projektu.
 
 %% Node/NPM
 
@@ -375,7 +378,7 @@ Node.js to wieloplatformowe środowsko uruchomieniowe zbudowane w języku JavaSc
    \caption{Logo systemu zarządzania treścią Strapi.}
 \end{figure}
 
-Strapi to system zarządzania treścią (CMS) typu \textit{headless} --- oznacza to, że nie pozwala on na definiowanie układu i wyglądu strony, a jedynie za zarządzanie treścią i jej dostarczanie do warstwy widoku. Użytkownik za pomocą intuicyjnego interfejsu graficznego może stworzyć model danych dostosowany do aktualnych potrzeb i wymagań. Do dyspozycji są dostępne typy pojedyncze (występujące tylko raz na całej stronie, np. treść sekcji ``o mnie''), kolekcje (np. posty lub projekty w portfolio) oraz komponenty (elementy powtarzające się w kolekcjach i typach pojedynczych) \cite{strapifeatures}. Głównymi zaletami Strapi są:
+Strapi to system zarządzania treścią (CMS) typu \textit{headless} --- oznacza to, że nie pozwala on na definiowanie układu i wyglądu strony, a jedynie za zarządzanie treścią i jej dostarczanie do warstwy widoku. Użytkownik za pomocą intuicyjnego interfejsu graficznego może stworzyć model danych dostosowany do aktualnych potrzeb i wymagań. Do dyspozycji są dostępne typy pojedyncze (występujące tylko raz na całej stronie, np. treść sekcji ``o mnie''), kolekcje (np. posty lub projekty w portfolio) oraz komponenty (elementy powtarzające się w kolekcjach i typach pojedynczych) \cite{strapifeatures}. \linebreak Głównymi zaletami Strapi są:
 \begin{itemize}
     \item wsparcie dla wielu systemów zarządzania bazami danych --- SQLite (domyślny), MySQL, PostgresQL oraz MariaDB;
     \item wiele dostępnych wtyczek ułatwiających korzystanie z systemu;
@@ -406,7 +409,7 @@ SQLite jest domyślnym systemem zarządzania relacyjną bazą danych dla Strapi.
    \caption{Logo biblioteki React.}
 \end{figure}
 
-React to biblioteka będąca jednym z najpopularniejszych narzędzi do tworzenia interfejsów użytkownika stron internetowych \cite{react}. Całość kodu pisana jest w JavaScripcie. Ważnym elementem Reacta jest JSX (ang. \textit{JavaScript Syntax Extension}) --- rozszerzenie składni JavaScript podobne do języka znaczników HTML. Ułatwia ono intuicyjne tworzenie komponentów, z których składa się strona internetowa.
+React to biblioteka będąca jednym z najpopularniejszych narzędzi do~tworzenia interfejsów użytkownika stron internetowych \cite{react}. Całość kodu pisana jest w JavaScripcie. Ważnym elementem Reacta jest JSX (ang. \textit{JavaScript Syntax Extension}) --- rozszerzenie składni JavaScript podobne do języka znaczników HTML. Ułatwia ono intuicyjne tworzenie komponentów, z których składa się strona internetowa.
 
 %% Next.js
 
@@ -418,7 +421,7 @@ React to biblioteka będąca jednym z najpopularniejszych narzędzi do tworzenia
    \caption{Logo szkieletu aplikacyjnego Next.js.}
 \end{figure}
 
-Next.js jest szkieletem aplikacyjnym dla biblioteki React pozwalającym na tworzenie statycznych aplikacji internetowych \cite{next}. Jego kluczową cechą jest możliwość renderowania i generowania zawartości strony internetowej po stronie serwera, co ulepsza pozycjonowanie witryny w wyszukiwarkach (SEO --- ang. \textit{search engine optimization}). Dla ułatwienia pracy nad tworzonymi stronami internetowymi, Next.js korzysta z routingu opartego na stronach. Dodatkowo, wsparcie dla routingu dynamicznego zapewnia m. in. możliwość łatwego tworzenia czytelnych dla użytkownika linków w formie unikalnego ciągu znaków (ang. \textit{slug}). Next.js posiada także integrację z Sassem --- preprocesorem języka CSS.
+Next.js jest szkieletem aplikacyjnym dla biblioteki React pozwalającym na tworzenie statycznych aplikacji internetowych \cite{next}. Jego kluczową cechą jest możliwość renderowania i generowania zawartości strony internetowej po~stronie serwera, co ulepsza pozycjonowanie witryny w wyszukiwarkach (SEO --- ang. \textit{search engine optimization}). Dla ułatwienia pracy nad tworzonymi stronami internetowymi, Next.js korzysta z routingu opartego na stronach. Dodatkowo, wsparcie dla routingu dynamicznego zapewnia m. in. możliwość łatwego tworzenia czytelnych dla użytkownika linków w formie unikalnego ciągu znaków (ang. \textit{slug}). Next.js posiada także integrację z Sassem --- preprocesorem języka CSS.
 
 %% SCSS
 
@@ -458,9 +461,9 @@ W tym rozdziale przedstawione zostaną założenia i wymagania (z podziałem na 
  
 %% Założenia projektu
 
-\subsection{Założenia projektu (wymagania biznesowe)}
+\subsection{Założenia projektu}
 
-Wymagania biznesowe określają wizję tworzonego projektu oraz cel jego realizacji \cite{wymagania}. Tworzona w ramach pracy inżynierskiej strona-wizytówka będzie składać się z dwóch części --- systemu zarządzania treścią Strapi oraz odpowiedzialnej za warstwę widoku aplikacji stworzonej z wykorzystaniem szkieletu aplikacyjnego Next.js. Jej głównym zadaniem jest przedstawienie prac fotografa w formie portfolio z podziałem na projekty (np. konkretne sesje zdjęciowe lub wydarzenia) oraz udostępnienie w formie bloga przestrzeni do wypowiedzi na temat powiązany z głównym obszarem tematycznym zdjęć, którym jest muzyka na żywo. Zgodnie z wnioskami z rozdziału \ref{przeglad}, graficzny interfejs tworzonej strony powinien być minimalistyczny, lecz nie surowy, co ma za zadanie skupić uwagę użytkownika na jej treści --- postach oraz fotografiach. 
+Założenia projektu określają wizję tworzonego projektu oraz cel jego realizacji. Tworzona w ramach pracy inżynierskiej strona-wizytówka będzie składać się z dwóch części --- systemu zarządzania treścią Strapi oraz odpowiedzialnej za warstwę widoku aplikacji stworzonej z wykorzystaniem szkieletu aplikacyjnego Next.js. Jej głównym zadaniem jest przedstawienie prac fotografa-dziennikarza muzycznego w formie portfolio z podziałem na projekty (np. konkretne sesje zdjęciowe lub wydarzenia) oraz udostępnienie w~formie bloga przestrzeni do wypowiedzi na temat powiązany z głównym obszarem tematycznym zdjęć, którym jest muzyka na żywo. Zgodnie z wnioskami z rozdziału \ref{przeglad}, graficzny interfejs tworzonej strony powinien być minimalistyczny, lecz nie surowy, co ma za zadanie skupić uwagę użytkownika na jej treści --- postach oraz fotografiach. 
 
 %% Wymagania funkcjonalne
 
@@ -472,24 +475,28 @@ Wymagania funkcjonalne określają konkretne funkcje, które powinny znaleźć s
 
 Możliwość dodawania, edytowania i usuwania elementów powinna być zarezerwowana tylko dla osoby zarządzającej stroną internetową, wyłącznie za pomocą panelu administratora. Wyjątkiem są komentarze do postów oraz wpisy kontakowe, które mogą być dodawane za pomocą udostępnionego przez system REST API przez każdego użytkownika odwiedzającego stronę. 
 
-\subsubsection*{Struktura danych w systemie zarządzania treścią}
+\subsubsection*{Struktura danych w systemie zarządzania treścią} \label{struktura}
 
-Struktura danych w systemie zarządzania treścią powinna być zorganizowana zgodnie z układem strony. Została ona przedstawiona w formie diagramu na rysunku \ref{fig:diagram-typu-tresci.png}. Dla ulepszenia czytelności diagramu została użyta następująca konwencja kolorów: elementy żółte to kolekcje, co oznacza, że mogą występować wielokrotnie (np. posty). Kolorem niebieskim zaznaczone są komponenty, które w tym przypadku składają się na treść posta w formie zaznaczonej na biało ``strefy dynamicznej'' (ang. \textit{dynamic zone}) --- pozwala to na stworzenie treści posta złożonego z komponentów ustawionych w dowolnej kolejności (przykładowo może to być jeden akapit, po którym następują dwa zdjęcia). Na pomarańczowo zaznaczone zostały typy pojedyncze, takie jak treść strony ``o mnie'' lub strony głównej. Kolor czerwony oznacza natomiast typ wyliczeniowy, który w tym przypadku odpowiada za kategorię, do jakiej przypisany może zostać post na blogu.
-
-\begin{figure}[H] 
-    \centering
-         \fbox{\includegraphics[width=0.99\textwidth]{images/diagram-typu-tresci.png}}
-   \caption{Diagram struktury danych w systemie zarządzania treści Strapi.}
-   \label{fig:diagram-typu-tresci.png}
-\end{figure}
+Struktura danych w systemie zarządzania treścią powinna być zorganizowana zgodnie z układem strony. Ułatwi to późniejsze pobieranie danych, a~także dodawanie oraz modyfikację treści. Potrzebne będą następujące kolekcje (elementy występujące na stronie więcej, niż jeden raz):
+\begin{itemize}
+    \item Post --- posiada tytuł, opis, miniaturkę i tło w formie zdjęć, treść złożoną z dowolnej ilości akapitów i obrazów oraz kategorię (typ wyliczeniowy); może mieć dowolną ilość komentarzy.
+    \item Wpis kontaktowy --- zawiera dane podane przez użytkownika (imię, nazwisko, adres poczty elektronicznej) oraz wiadomość i jej temat.
+    \item Projekt --- posiada tytuł, opis, dowolną ilośc zdjęć oraz miniaturkę.
+    \item Usługa --- posiada nazwę, opis, zdjęcie oraz cenę.
+\end{itemize}
+Na stronie pojawią się również elementy występujące wyłącznie jeden raz, dlatego wskazane będzie też stworzenie typów pojedynczych:
+\begin{itemize}
+    \item Zdjęcia na stronie głównej.
+    \item Treść strony ``o mnie'', w tym nagłówek, dwa akapity oraz zdjęcie.
+\end{itemize}
 
 \subsubsection*{Optymalizacja strony dla wyszukiwarek internetowych (SEO)}
 
-Aby w pełni wykorzystać możliwości tworzonej strony internetowej, powinna ona trafić do jak największej liczby odbiorców. W tym celu konieczna jest jej optymalizacja dla wyszukiwarek internetowych. Można to osiągnąć poprzez wykorzystanie renderowania po stronie serwera (SSR --- ang. \textit{Server-Side Rendering}) oraz generowania statycznej strony (SSG --- ang. \textit{Static Site Generation}). Dzięki SSG oraz SSR wyszukiwarki internetowe lepiej radzą sobie z indeksowaniem stron, co zwiększa szansę na znalezienie takiej strony przez potencjalnego użytkownika. Kolejnym sposobem na optymalizację SEO jest zastosowanie unikalnego ciągu znaków w formie tzw. \textit{sluga} do stworzenia linków do postów na blogu oraz projektów z portfolio zamiast standardowego identyfikatora występującego najczęściej po prostu w formie liczby całkowitej. Dobrą praktyką jest zawieranie jak największej liczby słów kluczowych związanych z tematyką danego postu lub przedmiotem zdjęć zamieszczonych w projekcie \cite{seo}.
+Aby w pełni wykorzystać możliwości tworzonej strony internetowej, powinna ona trafić do jak największej liczby odbiorców. W tym celu konieczna jest jej optymalizacja dla wyszukiwarek internetowych (ang. SEO --- \textit{Search Engine Optimization}). Można to osiągnąć poprzez wykorzystanie renderowania po stronie serwera (SSR --- ang. \textit{Server-Side Rendering}) oraz generowania statycznej strony (SSG --- ang. \textit{Static Site Generation}). Dzięki SSG oraz SSR wyszukiwarki internetowe lepiej radzą sobie z indeksowaniem stron, co zwiększa szansę na znalezienie takiej strony przez potencjalnego użytkownika. Kolejnym sposobem na optymalizację SEO jest zastosowanie unikalnego ciągu znaków w formie tzw. \textit{sluga} do stworzenia linków do postów na blogu oraz projektów z portfolio zamiast standardowego identyfikatora występującego najczęściej po prostu w formie liczby całkowitej. Dobrą praktyką jest zawieranie jak największej liczby słów kluczowych związanych z tematyką danego postu lub przedmiotem zdjęć zamieszczonych w projekcie \cite{seo}.
 
 \subsubsection*{Portfolio i projekty}
 
-Użytkownik odwiedzający projekt w portfolio fotografa powinien mieć możliwość wyświetlenia wybranego zdjęcia w większym formacie. Aby w pełni skupić jego uwagę na oglądanej fotografii, powinna ona się pojawiać w formie wyskakującego okienka z przyciemnionym lub rozmazanym tłem (którym jest strona projektu) oraz możliwością jego zamknięcia poprzez ponowne kliknięcie. 
+Użytkownik odwiedzający projekt w portfolio fotografa powinien mieć możliwość wyświetlenia wybranego zdjęcia w większym formacie. Aby w pełni skupić jego uwagę na oglądanej fotografii, powinna ona się pojawiać w formie wyskakującego okienka z przyciemnionym lub rozmazanym tłem (którym jest strona projektu) oraz możliwością jego zamknięcia poprzez ponowne kliknięcie w dowolnym miejscu. 
 
 \subsubsection*{Blog i posty}
 
@@ -498,38 +505,140 @@ Lista postów powinna być stworzona z wykorzystaniem paginacji, aby wyeliminowa
 
 \subsubsection*{Sposoby kontaktu}
 
-Aby umożliwić podjęcie kontaktu w dowolnie wybrany przez użytkownika sposób, powinny zostać podjęte kroki ułatwiające wykonanie tej czynności. Pierwszym sposobem jest udostępnienie formularza kontaktowego, który pozwoli na wysłanie wiadomości bezpośrednio przez odwiedzaną stronę internetową. Ważną częścią formularza jest jego walidacja --- użytkownik musi wiedzieć, czy wpisane przez niego dane są poprawne, a po wysłaniu --- czy podjęta próba kontaktu powiodła się. Kolejne rozwiązanie to umieszczenie na stronie (np. w stopce) numeru telefonu oraz adresu poczty elektronicznej. Dane te powinny być oznaczone w strukturze strony jako kotwica (ang. \textit{anchor}) oraz posiadać odpowiednie przedrostki (przykład dla adresu poczty elektronicznej w listingu \ref{chapter4:anchor}). Ostatnim sposobem na ułatwienie kontaktu osobie odwiedzającej stronę jest podanie odnośników do mediów społecznościowych, w szczególności Instagrama oraz Facebooka, które są głównymi serwisami wykorzystywanymi w branży fotograficznej. \newline\newline
+Aby umożliwić podjęcie kontaktu w dowolnie wybrany przez użytkownika sposób, powinny zostać podjęte kroki ułatwiające wykonanie tej czynności. Pierwszym sposobem jest udostępnienie formularza kontaktowego, który pozwoli na wysłanie wiadomości bezpośrednio przez odwiedzaną stronę internetową. Ważną częścią formularza jest jego walidacja --- użytkownik musi wiedzieć, czy wpisane przez niego dane są poprawne, a po wysłaniu --- czy podjęta próba kontaktu powiodła się. Kolejne rozwiązanie to umieszczenie na stronie (np. w stopce) numeru telefonu oraz adresu poczty elektronicznej. Dane te powinny być oznaczone w strukturze strony jako kotwica (ang. \textit{anchor}) oraz posiadać odpowiednie przedrostki (przykład dla adresu poczty elektronicznej w listingu \ref{chapter4:anchor}). Ostatnim sposobem na ułatwienie kontaktu osobie odwiedzającej stronę jest podanie odnośników do mediów społecznościowych, w szczególności Instagrama oraz Facebooka, które są głównymi serwisami wykorzystywanymi w branży fotograficznej.
 
 \begin{code}[htbp]
+    \vspace{0.5cm}
     \lstinputlisting{./code/anchor_example.txt}
     \caption
-    [Przykład zastosowania znacznika \textit{a} dla adresu poczty elektronicznej.]
-    {Przykład zastosowania znacznika \textit{a} dla adresu poczty elektronicznej.}
+    [Przykład zastosowania znacznika \textit{a} w języku HTML dla adresu poczty elektronicznej oraz numeru telefonu.]
+    {Przykład zastosowania znacznika \textit{a} w języku HTML dla adresu poczty elektronicznej oraz numeru telefonu.}
     \label{chapter4:anchor}
 \end{code}
+
 
 %% Wymagania niefunkcjonalne
 
 \subsection{Wymagania niefunkcjonalne}
 
-W odróżnieniu od wymagań funkcjonalnych, wymagania niefunkcjonalne określają ogólne cechy tworzonej aplikacji. Dotyczą one między innymi jego jakości oraz dostępności. Skupiają się nie na tym, co robi produkt, lecz na tym, jak dobrze to robi \cite{wymagania}.
+W odróżnieniu od wymagań funkcjonalnych, wymagania niefunkcjonalne określają ogólne cechy tworzonej aplikacji. Dotyczą one między innymi jej jakości oraz dostępności. Skupiają się nie na tym, co robi aplikacja, lecz na tym, jak dobrze to robi \cite{wymagania}. 
 
 \subsubsection*{Szybkość ładowania strony, wykorzystanie SSG i SSR}
 
-Aby wrażenie użytkownika odwiedzającego stronę było jak najlepsze, strona powinna ładować się szybko (razem ze zdjęciami). Pomocne (a zarazem przydatne do spełnienia wymagań zarówno funkcjonalnych jak i niefunkcjonalnych) do osiągnięcia tego celu jest wykorzystanie SSG oraz SSR, które są wbudowanymi funkcjonalnościami szkieletu aplikacyjnego Next.js. 
+Aby wywołać jak najlepsze wrażenie u użytkownika, który odwiedza tworzoną stronę internetową, powinna ona ładować się szybko, w szczególności tam, gdzie zdjęcia są jej najważniejszymi elementami (strona główna oraz portfolio). Pomocne (a zarazem przydatne do spełnienia wymagań zarówno funkcjonalnych i niefunkcjonalnych) do osiągnięcia tego celu jest wykorzystanie SSG oraz SSR, które są wbudowanymi funkcjonalnościami szkieletu aplikacyjnego Next.js. 
 
-\subsubsection*{Wygląd strony}
+\subsubsection*{Wygląd strony dopasowany do jej tematyki}
 
+Tworzona strona internetowa powinna wyglądać minimalistycznie w celu skupienia uwagi odwiedzających na jej treści. Sprawdzonym rozwiązaniem, które zostało zaprezentowane w rozdziale \ref{przeglad}, jest trzymanie się jak najmniejszej ilości kolorów. Aby dodać stronie czegoś charakterystycznego, można wykorzystać też kolor akcentowy, którym w tym przypadku jest fiolet. Przy minimalistycznym układzie i projekcie graficznym strony ważne jest również dodanie prostych animacji, np. pojawiające się podkreślenie oraz fioletowa strzałka przy najechaniu myszką na link na stronie głównej. 
 
+\subsubsection*{Intuicyjna nawigacja i dostęp do informacji}
+
+Nawigacja jest ważną częścią projektowania stron internetowych. Powinna ona być intuicyjna i łatwa, co przy prostej strukturze strony można osiągnąć poprzez umieszczenie widocznego cały czas paska nawigacji z linkami do wszystkich istniejących podstron. W stopce (również zawsze widocznej) powinny natomiast znaleźć się podstawowe dane kontaktowe takie jak numer telefonu oraz adres poczty elektronicznej. 
+
+\subsubsection*{Dostęp do strony na różnych urządzeniach i responsywność}
+
+Ze względu na reprezentacyjną charakterystykę strony-wizytówki złożonej z portfolio oraz blogu, kluczowe jest umożliwienie jej wyświetlania na jak największej ilości urządzeń z dostępem do Internetu. Aby zapewnić wygodę przeglądania tworzonej strony, wskazane jest wykonanie jej z użyciem metody RWD (ang. \textit{Responsive Web Design}), czyli w taki sposób, aby elementy i ich układ na stronie dostosowywały się do róznych rozmiarów ekranu \cite{rwd}. 
 
 %% Realizacja projektu 
 
-
 \subsection{Realizacja projektu} \label{realizacja}
+
+W tym podrozdziale przedstawione zostały najważniejsze aspekty implementacji obu części tworzonej strony internetowej. Najpierw opisana została konfiguracja systemu zarządzania treścią Strapi, utworzenie odpowiedniej struktury danych oraz umożliwienie pobierania i dodawania treści w sposób spełniający wymagania funkcjonalne. W dalszej części rozdziału zaprezentowana jest implementacja tworzonej strony z użyciem szkieletu aplikacyjnego Next.js wraz z jej najważniejszymi funkcjonalnościami, w tym pobieraniem treści ze Strapi.
 
 \subsubsection{Strapi --- stworzenie struktury danych oraz konfiguracja systemu zarządzania treścią}
 
+Aby rozpocząć pracę z systemem zarządzania treścią Strapi, należy mieć zainstalowane środowisko uruchomieniowe Node.js wraz z wybranym systemem zarządzania pakietami (w tym przypadku --- npm). Najprostszym sposobem na stworzenie projektu Strapi jest skorzystanie ze skryptu instalacyjnego. Można to zrobić za pomocą polecenia przedstawionego w~listingu~\ref{chapter4:npx_strapi.txt}. 
+
+\begin{code}[htbp]
+    \lstinputlisting{./code/npx_strapi.txt}
+    \caption
+    [Polecenie tworzące bazowy projekt systemu zarządzania treścią Strapi.]
+    {Polecenie tworzące bazowy projekt systemu zarządzania treścią Strapi.}
+    \label{chapter4:npx_strapi.txt}
+\end{code}
+
+
+Kiedy instalacja się zakończy, należy stworzyć pierwsze konto użytkownika z rolą administratora, który posiada pełne uprawnienia do systemu. Kolejnym krokiem jest utworzenie struktury danych według wymagań z rozdziału \ref{wymagania}. Służy do tego dostępna wyłącznie w trybie rozwojowym (ang. \textit{development mode})\footnote{Po zbudowaniu aplikacji zablokowana jest możliwość zmieniania struktury danych.}, przedstawiona na rysunku \ref{fig:strapi-interface-1.jpg} wtyczka \textit{Content-Type Builder} \cite{strapidocs}. Jest to narzędzie pozwalające stworzyć strukturę danych za pomocą interfejsu użytkownika bez konieczności ręcznego pisania kodu. Przykład przedstawiony na rysunku \ref{fig:strapi-interface-1.jpg} przedstawia interfejs narzędzia Strapi podczas używania wspomnianej wtyczki. 
+
+\begin{figure}[H] 
+    \centering
+         \fbox{\includegraphics[width=0.95\textwidth]{images/strapi-interface-1.jpg}}
+   \caption{Interfejs narzędzia Strapi z wtyczką Content-Type Builder.}
+   \label{fig:strapi-interface-1.jpg}
+\end{figure}
+
+Stworzona struktura danych została przedstawiona w formie diagramu na rysunku \ref{fig:diagram-typu-tresci.png}. Dla ulepszenia czytelności diagramu została użyta następująca konwencja kolorów: elementy żółte to kolekcje, co oznacza, że mogą występować wielokrotnie (np. posty). Kolorem niebieskim zaznaczone są komponenty, które w tym przypadku składają się na treść posta w formie zaznaczonej na biało ``strefy dynamicznej'' (ang. \textit{dynamic zone}) --- pozwala to na stworzenie treści posta złożonego z komponentów ustawionych w dowolnej kolejności (przykładowo może to być jeden akapit, po którym następują dwa zdjęcia). Na pomarańczowo zaznaczone zostały typy pojedyncze, takie jak treść strony ``o mnie'' lub strony głównej. Kolor czerwony oznacza natomiast typ wyliczeniowy, który w tym przypadku odpowiada za kategorię, do jakiej przypisany może zostać post na blogu.
+
+\begin{figure}[H] 
+    \centering
+         \fbox{\includegraphics[width=0.95\textwidth]{images/diagram-typu-tresci.png}}
+   \caption{Diagram struktury danych w systemie zarządzania treści Strapi.}
+   \label{fig:diagram-typu-tresci.png}
+\end{figure}
+
+Po zakończeniu tworzenia struktury danych konieczne jest ustawienie odpowiednich uprawnień dotyczących REST API w celu umożliwienia pobierania treści do wyświetlenia na stronie oraz zablokowania możliwości ich dodawania, usuwania i modyfikacji użytkownikom nieposiadającym konta w Strapi (reprezentowanych przez rolę \textit{Public}). Wyjątkami są komentarze, które mogą być dodawane pod postami przez każdą osobę odwiedzającą stronę oraz wpisy kontaktowe, które nie mogą być wyświetlane przez użytkowników, ale mogą być przez nich dodawane. Szczegółowa lista uprawnień dla roli \textit{Public} zaprezentowana jest w tabeli \ref{tab:permissions}. 
+
+\begin{table}
+    \centering
+    \caption{Lista uprawnień do REST API w Strapi dla użytkownika z rolą \textit{Public} (niezalogowanego)}
+    \begin{tabular}{|l|l|l|l|l|l|} 
+        \hline
+        \diagbox{\textbf{Element}}{\textbf{Uprawnienie}} & \textit{create} & \textit{delete} & \textit{update} & \textit{find} & \textit{findOne}  \\ 
+        \hline
+        Aboutpage                                        & n/d             &                 &                 & X             & n/d               \\ 
+        \hline
+        Mainpage                                         & n/d             &                 &                 & X             & n/d               \\ 
+        \hline
+        Comment                                          & X               &                 &                 & X             &                   \\ 
+        \hline
+        Contact-entry                                    & X               &                 &                 &               &                   \\ 
+        \hline
+        Post                                             &                 &                 &                 & X             & X                 \\ 
+        \hline
+        Project                                          &                 &                 &                 & X             & X                 \\ 
+        \hline
+        Service                                          &                 &                 &                 & X             & X                 \\
+        \hline
+        \end{tabular}
+    \label{tab:permissions}
+\end{table}
+
+Aby po stronie widoku możliwe było utworzenie linków do postów oraz projektów w postaci unikalnego ciągu znaków, konieczne było wprowadzenie modyfikacji do kontrolera dla wspomnianych kolekcji, a dokładniej --- nadpisanie funkcji pobrania jednego elementu (\textit{findOne}). Aby to zrobić, należy podać klucz, według którego ma być szukany dany element: jest nim właśnie \textit{slug}. Aby dane były pobierane w odpowiedni sposób trzeba ustawić parametr \textit{populate} dla zawartości elementu na wartość \textit{true}. Przykład modyfikacji kontrolera znajduje się w listingu \ref{chapter4:controller}.
+
+Ostatnim (choć wpływającym jedynie na wygodę dodawania treści) krokiem jest skorzystanie z funkcjonalności Strapi pozwalającej na rozmieszczenie elementów w edytorze treści w taki sposób, który odpowiada układowi faktycznej strony (rys. \ref{fig:strapi-interface-3.jpg}). Dzięki temu można rozpocząć dodawanie treści w sposób intuicyjny i prosty (rys. \ref{fig:strapi-interface-4.jpg})
+
+\begin{code}[htbp]
+    \lstinputlisting{./code/controller.txt}
+    \caption
+    [Przykład modyfikacji do kontrolera REST API w systemie zarządzania treścią Strapi.]
+    {Przykład modyfikacji do kontrolera REST API w systemie zarządzania treścią Strapi.}
+    \label{chapter4:controller}
+\end{code}
+
+\begin{figure}[H] 
+    \centering
+         \fbox{\includegraphics[width=0.95\textwidth]{images/strapi-interface-3.jpg}}
+   \caption{Rozmieszczanie elementów edytora treści w systemie zarządzania treścią Strapi.}
+   \label{fig:strapi-interface-3.jpg}
+\end{figure}
+
+\begin{figure}[H] 
+    \centering
+         \fbox{\includegraphics[width=0.95\textwidth]{images/strapi-interface-4.jpg}}
+   \caption{Efekt rozmieszczenia elementów w edytorze treści w systemie zarządzania treścią Strapi.}
+   \label{fig:strapi-interface-4.jpg}
+\end{figure}
+
+
 \subsubsection{Next.js --- implementacja strony internetowej z użyciem SSG oraz SSR}
+
+\begin{code}[htbp]
+    \lstinputlisting{./code/tree.txt}
+    \caption
+    [Drzewo plików w katalogu \textit{/pages}.]
+    {Drzewo plików w katalogu \textit{/pages}.}
+    \label{chapter4:tree}
+\end{code}
 
 % Portfolio i blog
 
@@ -721,11 +830,17 @@ Strona internetowa z portfolio oraz blogiem jest drugą, widoczną dla dowolnego
     Helion,
     2014.
     
-    \bibitem{seo},
+    \bibitem{seo}
     Eric Enge, Stephan Spencer, Jessie Stricchiola,
     \textit{SEO, czyli sztuka optymalizacji witryn dla wyszukiwarek},
     Helion,
     2016.
+
+    \bibitem{rwd}
+    Thoriq Firdaus,
+    \textit{Responsive Web Design. Nowoczesne strony WWW na przykładach},
+    Helion, 
+    2014.
 
         
 \end{thebibliography}

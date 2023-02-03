@@ -93,16 +93,16 @@ export default function Contact() {
         <h2>...lub skorzystaj z innych sposobów:</h2>
         <div className='contact-links-container'>
           <a href="https://www.instagram.com/oskarkurczewski/" target="_blank">
-            <img src="/square-instagram.svg" alt="instagram logo" width={50} height={50}/>
+            <img src="/square-instagram.svg" alt="instagram logo" />
           </a>
           <a href="https://www.facebook.com/oskarkurczewskifotografia" target="_blank">
-            <img src="/square-facebook.svg" alt="facebook logo" width={50} height={50}/>
+            <img src="/square-facebook.svg" alt="facebook logo" />
           </a>
           <a className='contact-way' href="mailto:oskarkuczewskifotografia@gmail.com">
-            <img src="/square-envelope-solid.svg" alt="envelope" width={50} height={50}/>
+            <img src="/square-envelope-solid.svg" alt="envelope" />
           </a>
           <a href="https://github.com/oskarkurczewski" target="_blank">
-            <img src="/square-github.svg" alt="github logo" width={50} height={50}/>
+            <img src="/square-github.svg" alt="github logo" />
           </a>
         </div>
       </div>
