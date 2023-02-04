@@ -1,0 +1,16 @@
+const commentData = {
+   nickname: nickname,
+   content: content,
+   post: {
+      id: postId
+   }
+}
+
+const add = await fetch(`${url}/api/comments`, {
+   method: "POST",
+   headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+   },
+   body: JSON.stringify({data: commentData})
+})

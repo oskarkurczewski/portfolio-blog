@@ -1,1 +1,3 @@
 npx create-strapi-app@latest portfolio-blog-strapi --quickstart
+cd portfolio-blog-strapi
+npm run develop

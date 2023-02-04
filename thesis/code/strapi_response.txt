@@ -1,0 +1,14 @@
+{
+    "data": {
+        "id": 1,
+        "attributes": {
+            "headline": "Headline example",
+            "paragraph1": "Paragraph 1 example",
+            "paragraph2": "Paragraph 2 example",
+            "createdAt": "2023-01-15T20:23:44.504Z",
+            "updatedAt": "2023-01-26T22:01:07.272Z",
+            "publishedAt": "2023-01-15T20:23:45.638Z"
+        }
+    },
+    "meta": {}
+}

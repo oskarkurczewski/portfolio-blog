@@ -1,0 +1,3 @@
+npx create-next-app@latest portfolio-blog-next
+cd portfolio-blog-next
+npm run dev
