@@ -730,7 +730,6 @@ Jednym z wymagań niefunkcjonalnych projektu jest zastosowanie metody RWD (ang. 
     \label{chapter4:mixin_example.txt}
 \end{code}
 
-
 \begin{code}[htbp]
     \lstinputlisting{./code/include_example.txt}
     \caption
@@ -742,7 +741,6 @@ Jednym z wymagań niefunkcjonalnych projektu jest zastosowanie metody RWD (ang. 
 % Portfolio i blog
 
 \clearpage
-
 \section{Portfolio i blog}
 
 W tym rozdziale zaprezentowany zostanie efekt końcowy oraz sposób użytkowania stworzonej strony internetowej z perspektywy administratora (podrozdział \ref{strapi-use}) oraz użytkownika odwiedzającego stronę (podrozdział \ref{next-use}). Opisane będzie między innymi korzystanie z systemu zarządzania treścią (tworzenie, edycja i usuwanie zawartości strony, wyświetlanie wiadomości z formularza kontatkowego), dodawanie komentarzy i dostosowanie strony do ekranów różnej wielkości. 
@@ -751,33 +749,41 @@ W tym rozdziale zaprezentowany zostanie efekt końcowy oraz sposób użytkowania
 
 \subsection{System zarządzania treścią} \label{strapi-use}
 
-Jednym z dwóch głównych elementów tworzonej strony internetowej jest system zarządzania treścią, którym jest Strapi. Aby z niego skorzystać, należy zalogować się do panelu administracyjnego, gdzie dostępny jest menedżer treści (ang. \textit{Content Manager}) pozwalający na dodawanie, edycję i usuwanie treści, które są widoczne dla osób odwiedzających stronę. 
+Jednym z dwóch głównych elementów tworzonej strony internetowej jest system zarządzania treścią, którym jest Strapi. Narzędzie to pozwala na intuicyjne dodawanie zawartości, która ma znaleźć się na stronie internetowej. Aby z niego skorzystać, należy zalogować się do panelu administracyjnego, gdzie dostępny jest menedżer treści (ang. \textit{Content Manager}) pozwalający na dodawanie, edycję i usuwanie treści, które są widoczne dla osób odwiedzających stronę. 
+
+\subsubsection*{Wyświetlanie wiadomości wysłanych za pomocą formularza kontaktowego}
+
+W celu wyświetlenia wiadomości wysłane za pomocą formularza kontaktowego należy przejść do kolekcji o nazwie \textit{contact-entry} w sekcji \textit{Content Manager} systemu zarządzania treścią Strapi. Znajduje się tam lista wpisów, które zostały dodane przez osoby odwiedzające stronę. Aby przeczytać konkretną wiadomość, należy wybrać ją z listy, która jest przedstawiona na rysunku \ref{fig:strapi-use-1.jpg}. 
 
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/strapi-use-1.jpg}}
-   \caption{Widok menadżera treści w Strapi (lista postów).}
+   \caption{Widok menadżera treści w Strapi (lista wiadomości wysłanych z formularza kontaktowego).}
    \label{fig:strapi-use-1.jpg}
 \end{figure}
+
+\subsubsection*{Dodawanie, edycja i usuwanie treści}
+
+Dodawanie, edycja i usuwanie treści w Strapi są bardzo prostymi czynnościami. Wszystko odbywa się za pomocą intuicyjnego graficznego interfejsu użytkownika. W tej sekcji jako przykład posłuży proces dodawania postu. Aby to zrobić, należy najpierw w menedżerze treści wybrać odpowiednią kolekcję, czyli \textit{post}. Wyświetli się wtedy lista podobna do tej z rysunku \ref{fig:strapi-use-1.jpg}, gdzie poprzez naciśnięcie przycisku ``\textit{Create an entry}'' należy otworzyć okno tworzenia nowej pozycji (rys. \ref{fig:strapi-use-2.jpg}). Kolejnym krokiem jest wypełnienie pól występujących w poście (rys. \ref{fig:strapi-use-3.jpg}). W przypadku dodawania obrazów i innych plików, należy je uprzednio przesłać do biblioteki multimediów (rys. \ref{fig:strapi-use-4.jpg}). Obrazy można też w prosty sposób przykadrować (rys. \ref{fig:strapi-use-5.jpg}). Edycja treści wygląda podobnie do jej dodawania, ale zamiast użycia przycisku ``\textit{Create an entry}'' należy wybrać z listy pozycję, która ma być zmieniona. Pozycje usuwa się za pomocą przycisku z ikoną kosza (akcję należy dodatkowo zatwierdzić). 
 
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/strapi-use-2.jpg}}
-   \caption{Widok menadżera treści w Strapi (lista postów).}
+   \caption{Widok menadżera treści w Strapi (tworzenie nowego postu --- pusty formularz).}
    \label{fig:strapi-use-2.jpg}
 \end{figure}
 
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/strapi-use-3.jpg}}
-   \caption{Widok menadżera treści w Strapi (tworzenie nowego postu).}
+   \caption{Widok menadżera treści w Strapi (tworzenie nowego postu --- dodawanie treści).}
    \label{fig:strapi-use-3.jpg}
 \end{figure}
 
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/strapi-use-4.jpg}}
-   \caption{Widok menadżera treści w Strapi (dodawanie nowego obrazu).}
+   \caption{Widok menadżera treści w Strapi (tworzenie nowego postu --- przesyłanie nowego obrazu).}
    \label{fig:strapi-use-4.jpg}
 \end{figure}
 
@@ -792,21 +798,36 @@ Jednym z dwóch głównych elementów tworzonej strony internetowej jest system 
 
 \subsection{Strona internetowa} \label{next-use}
 
-Strona internetowa z portfolio oraz blogiem jest drugą, widoczną dla dowolnego użytkownika częścią tworzonego projektu. 
+Strona internetowa z portfolio oraz blogiem jest drugą częścią stworzonego projektu i~odpowiada za prezentację treści zarządzanych z użyciem Strapi. W~tym podrozdziale przedstawione oraz opisane zostaną jej elementy oraz dopasowanie wyglądu strony do mniejszych ekranów (np. telefonów). 
+
+\subsubsection*{Nagłówek i stopka}
+
+Na stworzonej stronie internetowej pojawiły się dwa elementy, które są widoczne w każdej sekcji. Są to nagłówek strony pełniący głównie funkcję nawigacyjną i estetyczną oraz stopka, która umożliwia łatwy dostęp do najważniejszych informacji 
+takich jak dane kontaktowe czy linki do mediów społecznościowych fotografa. 
+
+\subsubsection*{Strona główna}
 
 \begin{figure}[H] 
+    \vspace{0.5cm}
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/gotowa-aplikacja-1.jpg}}
-   \caption{Strona główna.}
+   \caption{Widok strony głównej po najechaniu myszką na odnośnik do portfolio.}
    \label{fig:gotowa-aplikacja-1.jpg}
 \end{figure}
 
+Pierwszą rzeczą, którą widzą odwiedzający, jest strona główna (rys. \ref{fig:gotowa-aplikacja-1.jpg}). Składa się ona z trzech ułożonych w mozaikę zdjęć i menu, które jest połączeniem do pozostałych części strony --- portfolio, listy usług, blogu, strony ``o mnie'' i strony kontaktowej. Aby użytkownik wiedział, że jest to menu, zastosowano zanimowane podkreślenie tekstu i wskazującą strzałkę. Elementy te wyświetlają się po najechaniu na opcję myszką. 
+
+\subsubsection*{Portfolio}
+
 \begin{figure}[H] 
+    \vspace{0.5cm}
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/gotowa-aplikacja-2.jpg}}
    \caption{Portfolio --- widok listy projektów.}
    \label{fig:gotowa-aplikacja-2.jpg}
 \end{figure}
+
+Jednym z najważniejszych elementów stworzonej strony internetowej jest portfolio służące do prezentacji zdjęć w formie tematycznych galerii (nazwanych projektami). Portfolio składa się z dwóch części. Pierwszą z nich jest lista projektów, widoczna na rysunku \ref{fig:gotowa-aplikacja-2.jpg} --- każdy projekt jest wyświetlany w formie zdjęcia oraz podpisu. Po naciśnięciu odnośnika ``więcej zdjęć'', użytkownik przenoszony jest do widoku wybranego projektu (rys. \ref{fig:gotowa-aplikacja-3.jpg}). Składa się on z nagłówka, podpisu oraz galerii zdjęć w formie dwukolumnowej mozaiki. Każdą fotografię można kliknąć w celu wyświetlenia jej w większym formacie (rys. \ref{fig:gotowa-aplikacja-4.jpg}). Aby zamknąć ten widok, wystarczy kliknąć przycisk ``zamknij''. 
 
 \begin{figure}[H] 
     \centering
@@ -819,8 +840,13 @@ Strona internetowa z portfolio oraz blogiem jest drugą, widoczną dla dowolnego
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/gotowa-aplikacja-4.jpg}}
    \caption{Portfolio --- widok zdjęcia w większym formacie.}
+   \vspace{-4mm}
    \label{fig:gotowa-aplikacja-4.jpg}
 \end{figure}
+
+\subsubsection*{Lista usług}
+
+Sekcja zawierająca listę usług (rys. \ref{fig:gotowa-aplikacja-5.jpg}) jest natomiast jedną z najprostszych części całego projektu. Jej zadaniem jest przedstawienie charakterystyki świadczonych przez fotografa usług w formie krótkiego, chwytliwego opisu oraz informacji na temat ceny danej usługi. Wymienione dane pokazują się po najechaniu myszką na odpowiednią kartę --- obrazek wtedy zanika i widoczny jest tekst. 
 
 \begin{figure}[H] 
     \centering
@@ -829,11 +855,15 @@ Strona internetowa z portfolio oraz blogiem jest drugą, widoczną dla dowolnego
    \label{fig:gotowa-aplikacja-5.jpg}
 \end{figure}
 
+\subsubsection*{Blog i sekcja ``o mnie''}
+
+Kolejną częścią stworzonej strony internetowej jest blog. Składa się on z widocznej na rysunku \ref{fig:gotowa-aplikacja-6.jpg} paginowanej listy postów reprezentowanych przez karty (na każdej stronie jest sześć takich kart). Pełnią one funkcję odnośników do poszczególnych postów. Widok postu (rys. \ref{fig:gotowa-aplikacja-7.jpg}) składa się z nagłówka zawierającego tytuł oraz opis na tle zdjęcia, pod którym znajduje się data dodania wpisu. Następnym elementem jest treść postu, która może składać się ze zdjęć (z podpisem lub bez) oraz tekstu. 
+
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/gotowa-aplikacja-6.jpg}}
    \caption{Blog --- lista postów.}
-   \label{fig:gotowa-aplikacja-6.jpg}
+   \label{fig:gotowa-aplikacja-6.jpg} 
 \end{figure}
 
 \begin{figure}[H] 
@@ -843,25 +873,46 @@ Strona internetowa z portfolio oraz blogiem jest drugą, widoczną dla dowolnego
    \label{fig:gotowa-aplikacja-7.jpg}
 \end{figure}
 
+Na końcu postu (rys. \ref{fig:gotowa-aplikacja-8.jpg}) znajduje się sekcja komentarzy. Najprostsza ze wszystkich sekcja ``o mnie'' (rys. \ref{fig:gotowa-aplikacja-9.jpg}) zawiera natomiast zdjęcie oraz opis zawierający informacje na temat osoby prezentującej swoje projekty na stronie. 
+
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/gotowa-aplikacja-8.jpg}}
    \caption{Blog --- widok postu z komentarzem.}
+   \vspace{-3mm}
    \label{fig:gotowa-aplikacja-8.jpg}
 \end{figure}
 
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/gotowa-aplikacja-9.jpg}}
-   \caption{Strona ``o mnie''.}
+   \caption{Sekcja ``o mnie''.}
+   \vspace{-3mm}
    \label{fig:gotowa-aplikacja-9.jpg}
 \end{figure}
+
+\subsubsection*{Strona kontaktowa}
 
 \begin{figure}[H] 
     \centering
          \fbox{\includegraphics[width=0.95\textwidth]{images/gotowa-aplikacja-10.jpg}}
-   \caption{Formularz kontaktowy.}
+   \caption{Sekcja ``kontakt'' po poprawnym wysłaniu wiadomości z użyciem formularza.}
    \label{fig:gotowa-aplikacja-10.jpg}
+\end{figure}
+
+Ostatnia sekcja zawiera formularz kontaktowy i jest przedstawiona na rysunku \ref{fig:gotowa-aplikacja-10.jpg}. Umożliwia ona przesłanie wiadomości za pomocą formularza kontaktowego oraz zawiera odnośniki do mediów społecznościowych i adresu poczty elektronicznej. Rzeczą, na którą warto zwrócić uwagę jest, informacja o poprawnym wysłaniu wiadomości. Pozwala ona użytkownikowi upewnić się, że dotarła ona do systemu zarządzania treścią w poprawny sposób. 
+
+
+
+\subsubsection*{Responsywność strony}
+
+Strona internetowa z portfolio i blogiem została stworzona z zastosowaniem zasad RWD (\textit{Responsive Web Design}). Rysunek \ref{fig:resposywnosc.jpg} przedstawia widok strony głównej, projektu w portfolio oraz postu na blogu widziane na ekranie smartfona. 
+
+\begin{figure}[H] 
+    \centering
+         \fbox{\includegraphics[width=0.95\textwidth]{images/resposywnosc.jpg}}
+   \caption{Responsywność strony --- strona główna, projekt w portfolio oraz post na blogu.}
+   \label{fig:resposywnosc.jpg}
 \end{figure}
 
 % Podsumowanie
